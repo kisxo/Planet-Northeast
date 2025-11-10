@@ -6,36 +6,44 @@ import { Clock, Users } from "lucide-react";
 
 const tours = [
   {
-    title: "Shillong & Cherrapunji Escape",
-    image: Shillong, // Replace with your image import
-    duration: "4 days",
-    groupSize: "Small group",
-    price: "From ₹12,999"
-  },
-  {
-    title: "Tawang Himalayan Road Trip",
+    title: "Tawang Group Tour",
     image: tawangRoad, // Replace with your image import
-    duration: "7 days",
-    groupSize: "Rider / SUV Tour",
-    price: "From ₹22,499"
+    duration: "5 Days | 4 Nights",
+    groupSize: "Group Tour (Tempo Traveller)",
+    price: "From ₹9,999 /- Per Person",
   },
   {
-    title: "Ziro Valley Cultural Retreat",
+    title: "Anini & Dibang Valley Expedition",
+    image: Shillong, // Replace with your image import
+    duration: "6 Days | 5 Nights",
+    groupSize: "Private / Group Tour",
+    price: "From ₹14,500 /- Per Person",
+  },
+  {
+    title: "Mechuka Valley Adventure",
     image: tourZiro, // Replace with your image import
-    duration: "6 days",
-    groupSize: "Private / Group",
-    price: "From ₹18,999"
+    duration: "6 Days | 5 Nights",
+    groupSize: "Adventure / Group Tour",
+    price: "From ₹— (Ask for Quote)",
+  },
+  {
+    title: "Meghalaya Scenic Tour",
+    image: tourZiro, // Replace with your image import
+    duration: "5 Days | 4 Nights",
+    groupSize: "Private / Group Tour",
+    price: "From ₹— (Custom Pricing)",
   }
 ];
 
 
+
 const Tours = () => {
   return (
-    <section id="tours" className="py-24 bg-muted/30">
+    <section id="tours" className="py-16 bg-muted/30">
       <div className="container mx-auto px-6">
         <div className="max-w-3xl mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Roads That Call Your Name, Start the Journey
+            Our Tours
           </h2>
           <p className="text-lg text-muted-foreground">
             Discover our most loved adventures.

@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Mountain, Facebook, Instagram, Twitter, Mail } from "lucide-react";
- import logo from "@/assets/logo.png";
+import logo from "@/assets/logo-white.png";
 
 const Footer = () => {
   return (
@@ -71,11 +71,11 @@ const Footer = () => {
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <div className="flex items-center gap-2">
              
-<img src={logo} alt=""className="h-8 w-8 text-primary rounded"  />
-              <span className="font-bold">NomadsOnWheels</span>
+<img src={logo} alt=""className="h-20 w-20 text-primary rounded"  />
+              <span className="font-bold">Planet Northeast</span>
             </div>
             <p className="text-sm text-background/60">
-              © 2025 NomadsOnWheels. All rights reserved.
+              © 2025 Planet Northeast. All rights reserved.
             </p>
           </div>
         </div>
