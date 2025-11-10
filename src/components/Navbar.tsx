@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import logo from "@/assets/logo.png";
+import logo from "@/assets/logo-black.png";
 import { Link as RouterLink } from "react-router-dom";
 
 export default function Header({ LinkComponent = RouterLink, links = null }) {
@@ -24,22 +24,23 @@ export default function Header({ LinkComponent = RouterLink, links = null }) {
   const defaultLinks = [
     { to: "/", label: "Home" },
     { to: "/about", label: "About" },
-    { to: "/destinations", label: "Destinations" },
+    // { to: "/destinations", label: "Destinations" },
     { to: "/tours", label: "Tours" },
-    { to: "/auth", label: "Login", isButton: true },
+    { to: "/contact", label: "Contact Us" },
+    // { to: "/auth", label: "Login", isButton: true },
   ];
 
   const navLinks = links ?? defaultLinks;
 
   return (
     <header className="fixed inset-x-0 top-0 z-50 bg-white/80 backdrop-blur-lg border-b border-gray-200">
-      <div className="container mx-auto px-6 py-3">
+      <div className="container mx-auto px-6">
         <div className="flex items-center justify-between">
           {/* Brand */}
           <SmartLink to="/" className="flex items-center gap-3">
-            <img src={logo} alt="" className="h-8 w-8 rounded" />
+            <img src={logo} alt="" className="h-20 w-20 rounded" />
             <span className="text-xl font-bold tracking-tight text-gray-900">
-              NomadsOnWheels
+              Planet Northeast
             </span>
           </SmartLink>
 
