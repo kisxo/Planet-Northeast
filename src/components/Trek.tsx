@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Clock, Users } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const treks = [
   {
@@ -8,6 +9,7 @@ const treks = [
     duration: "3 Days | 2 Nights",
     groupSize: "Group Trekking",
     price: "From ₹5,399 /- Per Person",
+    link: "/treks/dzukou-valley",
   },
   {
     title: "Glow Lake Trek",
@@ -15,6 +17,7 @@ const treks = [
     duration: "3 Days | 2 Nights",
     groupSize: "Group Trekking",
     price: "From ₹5,999 /- Per Person",
+    link: "/treks/glow-lake",
   },
 ];
 
@@ -61,9 +64,9 @@ const Treks = () => {
 
                 <div className="flex items-center justify-between">
                   <span className="text-lg font-semibold">{trek.price}</span>
-                  <Button variant="outline" size="sm">
+                  <Link to={trek.link} className="border rounded-sm p-2">
                     Book Now
-                  </Button>
+                  </Link>
                 </div>
               </div>
             </div>

@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Camera, MapPin } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const photoTours = [
   {
@@ -8,6 +9,7 @@ const photoTours = [
     duration: "5 Days | 4 Nights",
     groupSize: "Small Group / Custom Tour",
     price: "From ₹19,999 /- Per Person",
+    link: "/photography-tours/apatani-tribe",
   },
   {
     title: "Nagaland Cultural Photography Tour",
@@ -15,6 +17,7 @@ const photoTours = [
     duration: "6 Days | 5 Nights",
     groupSize: "Small Group / Custom Tour",
     price: "From ₹21,499 /- Per Person",
+    link: "/photography-tours/nagaland",
   },
 ];
 
@@ -61,9 +64,9 @@ const PhotoTours = () => {
 
                 <div className="flex items-center justify-between">
                   <span className="text-lg font-semibold">{tour.price}</span>
-                  <Button variant="outline" size="sm">
+                  <Link to={tour.link} className="border rounded-sm p-2">
                     Book Now
-                  </Button>
+                  </Link>
                 </div>
               </div>
             </div>

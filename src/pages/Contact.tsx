@@ -6,6 +6,8 @@ import {
   FaMapMarkerAlt,
 } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
+import Navbar from "../components/Navbar";
+import Footer from "@/components/Footer";
 
 export default function Contact() {
   const navigate = useNavigate();
@@ -15,7 +17,8 @@ export default function Contact() {
   };
 
   return (
-    <div className="bg-black text-white min-h-screen flex flex-col">
+    <div className="bg-black text-white min-h-screen flex flex-col pt-10">
+      <Navbar/>
       {/* HERO SECTION */}
       <section className="relative flex flex-col justify-center items-center text-center py-20 px-6 overflow-hidden">
         {/* Background Image */}
@@ -111,10 +114,7 @@ export default function Contact() {
         </button>
       </div>
 
-      {/* FOOTER */}
-      <footer className="mt-auto text-center border-t border-gray-800 py-6 text-gray-500 text-sm">
-        © {new Date().getFullYear()} Planet Northeast — Discover the Unseen.
-      </footer>
+      <Footer/>
     </div>
   );
 }

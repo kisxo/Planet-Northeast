@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Calendar, Music } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const festivals = [
   {
@@ -8,6 +9,7 @@ const festivals = [
     duration: "4 Days | 3 Nights",
     groupSize: "Open Festival",
     price: "From ₹5,499 /- Per Person",
+    link: "/festivals/ziromusic",
   },
   {
     title: "Hornbill Festival",
@@ -15,6 +17,7 @@ const festivals = [
     duration: "10 Days | 9 Nights",
     groupSize: "Open Festival",
     price: "From ₹14,499 /- Per Person",
+    link: "/festivals/ziromusic",
   },
 ];
 
@@ -61,9 +64,9 @@ const Festivals = () => {
 
                 <div className="flex items-center justify-between">
                   <span className="text-lg font-semibold">{festival.price}</span>
-                  <Button variant="outline" size="sm">
+                  <Link to={festival.link} className="border rounded-sm p-2">
                     Book Now
-                  </Button>
+                  </Link>
                 </div>
               </div>
             </div>

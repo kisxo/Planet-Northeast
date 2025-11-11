@@ -3,6 +3,7 @@ import tawangRoad from "@/assets/tawang_road.png";
 import tourZiro from "@/assets/Ziro Valley.png";
 import { Button } from "@/components/ui/button";
 import { Clock, Users } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const tours = [
   {
@@ -11,6 +12,7 @@ const tours = [
     duration: "5 Days | 4 Nights",
     groupSize: "Private/Group Tour",
     price: "From ₹9,999 /- Per Person",
+    link: "tours/tawang",
   },
   {
     title: "Anini Tour",
@@ -18,6 +20,7 @@ const tours = [
     duration: "6 Days | 5 Nights",
     groupSize: "Private / Group Tour",
     price: "From ₹14,500 /- Per Person",
+    link: "/tours/anini",
   },
   {
     title: "Mechuka Tour",
@@ -25,6 +28,7 @@ const tours = [
     duration: "6 Days | 5 Nights",
     groupSize: "Private / Group Tour",
     price: "From ₹— (Ask for Quote)",
+    link: "/tours/mechuka",
   },
   {
     title: "Meghalaya Tour",
@@ -32,6 +36,7 @@ const tours = [
     duration: "5 Days | 4 Nights",
     groupSize: "Private / Group Tour",
     price: "From ₹— (Custom Pricing)",
+    link: "/tours/meghalaya",
   }
 ];
 
@@ -80,9 +85,9 @@ Handpicked routes. Authentic experiences. Memories for a lifetime.
                 </div>
                 <div className="flex items-center justify-between">
                   <span className="text-lg font-semibold">{tour.price}</span>
-                  <Button variant="outline" size="sm">
+                  <Link to={tour.link} className="border rounded-sm p-2">
                     Book Now
-                  </Button>
+                  </Link>
                 </div>
               </div>
             </div>
