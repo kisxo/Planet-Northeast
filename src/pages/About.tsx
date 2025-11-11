@@ -11,10 +11,24 @@ const About = () => {
         <section className="py-24 bg-gradient-to-br from-primary/10 via-background to-secondary/10">
           <div className="container mx-auto px-6">
             <div className="max-w-4xl mx-auto text-center">
-              <h1 className="text-4xl md:text-6xl font-bold mb-6">About NomadsOnWheels</h1>
+              <h1 className="text-4xl md:text-6xl font-bold mb-6">About Us</h1>
               <p className="text-xl text-muted-foreground mb-8">
-                We're passionate travelers dedicated to creating unforgettable adventures and 
-                connecting people with the world's most amazing destinations.
+                We are more than a travel company.{" "}
+                <span className=" text-orange-400  font-bold">
+                  Planet Northeast
+                </span>{" "}
+                is your doorway to the cultural heartbeat of Northeast India.
+                Rooted deeply in the region and connected with its people, we
+                curate authentic, immersive travel experiences that go beyond
+                the ordinary. From vibrant festivals and tribal traditions to
+                untouched landscapes and hidden homestays, we take you into the
+                living stories of Northeast India’s many tribes — each with its
+                own heritage and rhythm of life. Throughout the year, we craft
+                hassle-free, value-driven journeys across all Northeastern
+                states — and are now expanding to Vietnam, Bhutan, and Nepal.
+                Whether you seek offbeat adventures, cultural depth, scenic
+                treks, or soulful moments, your journey with Planet Northeast
+                will stay with you long after you return home.
               </p>
             </div>
           </div>
@@ -25,15 +39,35 @@ const About = () => {
           <div className="container mx-auto px-6">
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div>
-                <h2 className="text-3xl md:text-5xl font-bold mb-6">Our Mission</h2>
-                <p className="text-lg text-muted-foreground mb-6">
-                  At NomadsOnWheels, we believe that travel is more than just visiting new places—
-                  it's about creating memories, experiencing cultures, and forming connections that 
-                  last a lifetime.
+                <h2 className="text-3xl md:text-5xl font-bold mb-6">
+                  Our Mission
+                </h2>
+                <p className="text-lg text-muted-foreground leading-relaxed">
+                  We’re more than a travel company. We’re storytellers,
+                  bridge-builders, and explorers of culture.
                 </p>
-                <p className="text-lg text-muted-foreground">
-                  We curate exceptional travel experiences that combine adventure, comfort, and 
-                  authentic local insights to give you the trip of a lifetime.
+                <p className="mt-6 text-muted-foreground leading-relaxed">
+                  Planet Northeast is your doorway to the living heartbeat of
+                  Northeast India — a land where misty mountains hum with tribal
+                  songs, rivers carry ancient legends, and every village has a
+                  story waiting to be shared.
+                </p>
+                <p className="mt-6 text-muted-foreground leading-relaxed">
+                  With deep roots in the region and long-standing connections
+                  with local communities, we create authentic, immersive
+                  experiences that go far beyond the tourist trail. Our journeys
+                  celebrate people, traditions, and landscapes — connecting you
+                  to the warmth of local hosts, the rhythm of festivals, and the
+                  quiet wisdom of nature.
+                </p>
+                <p className="mt-6 text-muted-foreground leading-relaxed">
+                  Throughout the year, we curate hassle-free, value-driven trips
+                  across all eight Northeastern states — and are expanding our
+                  journeys to include Vietnam, Bhutan, and Nepal. Whether you
+                  seek offbeat adventure, photographic journeys, soulful treks,
+                  or deep cultural discovery, Planet Northeast is where your
+                  journey begins — and where stories stay with you long after
+                  you return home.
                 </p>
               </div>
               <div className="grid grid-cols-2 gap-6">
@@ -66,7 +100,9 @@ const About = () => {
         <section className="py-24 bg-muted/30">
           <div className="container mx-auto px-6">
             <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-5xl font-bold mb-4">Our Values</h2>
+              <h2 className="text-3xl md:text-5xl font-bold mb-4">
+                Our Values
+              </h2>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
                 These core principles guide everything we do
               </p>
@@ -78,7 +114,8 @@ const About = () => {
                 </div>
                 <h3 className="text-2xl font-bold mb-4">Authenticity</h3>
                 <p className="text-muted-foreground">
-                  We create genuine experiences that connect you with local cultures and communities.
+                  We create genuine experiences that connect you with local
+                  cultures and communities.
                 </p>
               </div>
               <div className="text-center p-8">
@@ -87,7 +124,8 @@ const About = () => {
                 </div>
                 <h3 className="text-2xl font-bold mb-4">Excellence</h3>
                 <p className="text-muted-foreground">
-                  Every detail is carefully planned to ensure your journey exceeds expectations.
+                  Every detail is carefully planned to ensure your journey
+                  exceeds expectations.
                 </p>
               </div>
               <div className="text-center p-8">
@@ -96,7 +134,8 @@ const About = () => {
                 </div>
                 <h3 className="text-2xl font-bold mb-4">Community</h3>
                 <p className="text-muted-foreground">
-                  We believe in building connections and supporting local communities worldwide.
+                  We believe in building connections and supporting local
+                  communities worldwide.
                 </p>
               </div>
             </div>

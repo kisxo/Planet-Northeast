@@ -1,0 +1,84 @@
+import { Button } from "@/components/ui/button";
+import { Clock, Users } from "lucide-react";
+
+const treks = [
+  {
+    title: "Dzukou Valley Trek",
+    image: "https://chalohoppo.com/wp-content/uploads/2025/03/76-1024x576.jpg",
+    duration: "3 Days | 2 Nights",
+    groupSize: "Group Trekking",
+    price: "From ₹5,399 /- Per Person",
+  },
+  {
+    title: "Glow Lake Trek",
+    image: "https://live.staticflickr.com/789/40374032735_2ba86c2c1f_b.jpg",
+    duration: "3 Days | 2 Nights",
+    groupSize: "Group Trekking",
+    price: "From ₹5,999 /- Per Person",
+  },
+];
+
+const Treks = () => {
+  return (
+    <section id="treks" className="py-16 bg-muted/30">
+      <div className="container mx-auto px-6">
+        {/* Header */}
+        <div className="max-w-3xl mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6">Our Treks</h2>
+          <p className="text-lg text-muted-foreground">
+            Explore handpicked trekking adventures across the Northeast — rolling valleys, 
+            untouched forests, and unforgettable experiences.
+          </p>
+        </div>
+
+        {/* Treks Grid */}
+        <div className="grid md:grid-cols-3 gap-8">
+          {treks.map((trek) => (
+            <div
+              key={trek.title}
+              className="bg-card rounded-2xl overflow-hidden shadow-soft hover:shadow-hover transition-all duration-300 group cursor-pointer"
+            >
+              <div className="relative overflow-hidden aspect-[4/3]">
+                <img
+                  src={trek.image}
+                  alt={trek.title}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+              </div>
+
+              <div className="p-6">
+                <h3 className="text-xl font-semibold mb-4">{trek.title}</h3>
+                <div className="flex items-center gap-4 text-sm text-muted-foreground mb-4">
+                  <div className="flex items-center gap-2">
+                    <Clock className="h-4 w-4" />
+                    <span>{trek.duration}</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <Users className="h-4 w-4" />
+                    <span>{trek.groupSize}</span>
+                  </div>
+                </div>
+
+                <div className="flex items-center justify-between">
+                  <span className="text-lg font-semibold">{trek.price}</span>
+                  <Button variant="outline" size="sm">
+                    Book Now
+                  </Button>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* CTA Button */}
+        <div className="text-center mt-12">
+          <Button variant="default" size="lg">
+            View All Treks
+          </Button>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Treks;
