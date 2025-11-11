@@ -12,7 +12,6 @@ import Dashboard from "./pages/Dashboard";
 import NotFound from "./pages/NotFound";
 import Contact from "./pages/Contact";
 import Hornbill from "./pages/Festivals/Hornbill";
-import ZiroMusic from "./pages/Festivals/ZiroMusic";
 import ApataniTribe from "./pages/PhotographyTours/ApataniTribe";
 import Nagaland from "./pages/PhotographyTours/Nagaland";
 import DzukouValley from "./pages/Treks/DzukouValley";
@@ -51,14 +50,13 @@ const App = () => (
 
           {/* festivals */}
           <Route path="/festivals/hornbill" element={<Hornbill />} />
-          <Route path="/festivals/ziromusic" element={<ZiroMusic />} />
 
           {/* Photography */}
-          <Route path="/photography-tours/apatani-tribe" element={<ApataniTribe />} />
+          <Route
+            path="/photography-tours/apatani-tribe"
+            element={<ApataniTribe />}
+          />
           <Route path="/photography-tours/nagaland" element={<Nagaland />} />
-
-
-
 
           <Route path="*" element={<NotFound />} />
         </Routes>

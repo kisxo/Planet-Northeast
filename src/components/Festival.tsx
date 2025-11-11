@@ -18,12 +18,11 @@ const festivals = [
     duration: "December 1st to 10th",
     groupSize: "Open Festival",
     price: "From ₹999 /- Per Person",
-    link: "/festivals/ziromusic",
+    link: "/festivals/Hornbill",
   },
 ];
 
 const Festivals = () => {
-
   const navigate = useNavigate();
   return (
     <section id="festivals" className="py-16 bg-muted/30">
@@ -45,7 +44,10 @@ const Festivals = () => {
               className="bg-card rounded-2xl overflow-hidden shadow-soft hover:shadow-hover transition-all duration-300 group cursor-pointer"
             >
               <div className="relative overflow-hidden aspect-[4/3]">
-                <img onClick={()=>{navigate(festival.link);}}
+                <img
+                  onClick={() => {
+                    navigate(festival.link);
+                  }}
                   src={festival.image}
                   alt={festival.title}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
