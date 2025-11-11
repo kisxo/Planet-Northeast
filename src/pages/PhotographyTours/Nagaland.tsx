@@ -1,6 +1,5 @@
 import React, { useState, useRef } from "react";
 import pdfDocument from "../../assets/nagaland.pdf";
-import PdfViewer from "../../components/PfdViewer";
 import img1 from "./nagaland/img1.jpg";
 import img2 from "./nagaland/img2.jpg";
 import img3 from "./nagaland/img3.jpg";
