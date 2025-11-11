@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import Hornbillimg from "@/assets/Hornbill2.jpg";
 import Hornbillcamp from "@/assets/hornbillcamp.jpg";
 import HornbillPackage from "@/assets/Hornbillpack.jpg";
-
+import Hornbillcult from "@/assets/Hornbillculture.jpg";
 const Hornbill = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -125,7 +125,7 @@ const Hornbill = () => {
       </section>
 
       {/* ---------- ABOUT SECTION ---------- */}
-      <section className="max-w-5xl mx-auto px-6 py-16 border-b border-gray-200">
+      <section className="max-w-6xl mx-auto px-6 py-16 border-b border-gray-200">
         <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
           About Hornbill Festival
         </h2>
@@ -149,18 +149,31 @@ const Hornbill = () => {
           world.
         </p>
 
-        <h3 className="text-2xl font-semibold mb-3 text-gray-800">
-          Things to Do
-        </h3>
-        <ul className="list-disc pl-6 space-y-2 text-gray-700">
-          <li>Witness traditional tribal dances and folk music</li>
-          <li>Enjoy local delicacies and rice beer</li>
-          <li>Explore ethnic craft markets</li>
-          <li>Capture stunning photography moments</li>
-          <li>Experience camping & bonfires under the stars</li>
-          <li>Attend the electrifying Hornbill Rock Festival</li>
-          <li>Discover offbeat destinations around Kohima</li>
-        </ul>
+        {/* ---------- THINGS TO DO WITH IMAGE ---------- */}
+        <div className="grid md:grid-cols-2 gap-10 items-center">
+          <div>
+            <h3 className="text-2xl font-semibold mb-3 text-gray-800">
+              Things to Do
+            </h3>
+            <ul className="list-disc pl-6 space-y-2 text-gray-700">
+              <li>Witness traditional tribal dances and folk music</li>
+              <li>Enjoy local delicacies and rice beer</li>
+              <li>Explore ethnic craft markets</li>
+              <li>Capture stunning photography moments</li>
+              <li>Experience camping & bonfires under the stars</li>
+              <li>Attend the electrifying Hornbill Rock Festival</li>
+              <li>Discover offbeat destinations around Kohima</li>
+            </ul>
+          </div>
+
+          <div className="rounded-2xl overflow-hidden shadow-lg">
+            <img
+              src={Hornbillcult}
+              alt="Things to Do at Hornbill Festival"
+              className="w-full h-full object-cover"
+            />
+          </div>
+        </div>
       </section>
 
       {/* ---------- OUR PACKAGES ---------- */}
@@ -311,22 +324,22 @@ const Hornbill = () => {
               >
                 <option value="">Select Your Package</option>
                 <option value="Hornbill Camping — ₹999/- (Breakfast)">
-                  🏕️ Hornbill Camping — ₹999/- (Breakfast)
+                  Hornbill Camping — ₹999/- (Breakfast)
                 </option>
                 <option value="Hornbill Camping — ₹1350/- (Breakfast & Dinner)">
-                  🏕️ Hornbill Camping — ₹1350/- (Breakfast & Dinner)
+                  Hornbill Camping — ₹1350/- (Breakfast & Dinner)
                 </option>
                 <option value="Hornbill & Dzukou — ₹6,499/- (3N/4D | Meals & Transport)">
-                  🌄 Hornbill & Dzukou — ₹6,499/- (3N/4D | Meals & Transport)
+                  Hornbill & Dzukou — ₹6,499/- (3N/4D | Meals & Transport)
                 </option>
                 <option value="Hornbill, Dzukou & Local Experiences — ₹10,999/- (4N/5D)">
-                  🏞️ Hornbill, Dzukou & Local Experiences — ₹10,999/- (4N/5D)
+                  Hornbill, Dzukou & Local Experiences — ₹10,999/- (4N/5D)
                 </option>
                 <option value="Hornbill, Dzukou & Local Exp. Extended — ₹11,999/- (5N/6D)">
-                  🌿 Hornbill, Dzukou & Local Exp. Extended — ₹11,999/- (5N/6D)
+                  Hornbill, Dzukou & Local Exp. Extended — ₹11,999/- (5N/6D)
                 </option>
                 <option value="Complete Hornbill (With Dzukou & Offbeat Tours) — ₹18,599/- (10 Days)">
-                  🎉 Complete Hornbill (With Dzukou & Offbeat Tours) — ₹18,599/-
+                  Complete Hornbill (With Dzukou & Offbeat Tours) — ₹18,599/-
                   (10 Days)
                 </option>
               </select>
