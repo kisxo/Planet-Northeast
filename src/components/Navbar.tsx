@@ -5,33 +5,31 @@ import { Link as RouterLink } from "react-router-dom";
 export default function Header({ LinkComponent = RouterLink, links = null }) {
   const [open, setOpen] = useState(false);
 
-  // ✅ safe wrapper
+  // Smart Link: Detect hash (#) and scroll smoothly
   const SmartLink = ({ to, children, className = "", ...rest }) => {
-    if (LinkComponent) {
-      return (
-        <LinkComponent to={to} className={className} {...rest}>
-          {children}
-        </LinkComponent>
-      );
-    }
+    const handleClick = (e) => {
+      if (to.includes("#")) {
+        e.preventDefault();
+        const id = to.split("#")[1];
+        const section = document.getElementById(id);
+        section?.scrollIntoView({ behavior: "smooth" });
+        setOpen(false);
+      }
+    };
+
     return (
-      <a href={to} className={className} {...rest}>
+      <LinkComponent to={to} className={className} onClick={handleClick} {...rest}>
         {children}
-      </a>
+      </LinkComponent>
     );
   };
 
   const defaultLinks = [
     { to: "/", label: "Home" },
     { to: "/about", label: "About" },
-    // { to: "/destinations", label: "Destinations" },
-    { to: "/tours", label: "Tours" },
-
-    { to: "/", label: "Photography Tours" }, //Fix it
-
+    { to: "/#tours", label: "Tours" },
+    { to: "/#phototours", label: "Photography Tours" },
     { to: "/contact", label: "Contact Us" },
-
-    // { to: "/auth", label: "Login", isButton: true },
   ];
 
   const navLinks = links ?? defaultLinks;
@@ -42,13 +40,13 @@ export default function Header({ LinkComponent = RouterLink, links = null }) {
         <div className="flex items-center justify-between">
           {/* Brand */}
           <SmartLink to="/" className="flex items-center gap-3">
-            <img src={logo} alt="" className="h-20 w-20 rounded" />
+            <img src={logo} alt="Logo" className="h-20 w-20 rounded" />
             <span className="text-xl font-bold tracking-tight text-gray-900">
               Planet Northeast
             </span>
           </SmartLink>
 
-          {/* Desktop links */}
+          {/* Desktop Nav */}
           <nav className="hidden md:flex items-center gap-8">
             {navLinks.map((item) =>
               item.isButton ? (
@@ -69,38 +67,27 @@ export default function Header({ LinkComponent = RouterLink, links = null }) {
             )}
           </nav>
 
-          {/* Mobile toggle */}
-          <div className="md:hidden">
-            <button
-              onClick={() => setOpen((v) => !v)}
-              aria-expanded={open}
-              aria-label="Toggle menu"
-              className="p-2 rounded-md inline-flex items-center justify-center text-gray-700 hover:bg-gray-100"
-            >
-              {open ? (
-                <svg className="h-6 w-6" viewBox="0 0 24 24" fill="none">
-                  <path
-                    d="M6 6l12 12M18 6L6 18"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                  />
-                </svg>
-              ) : (
-                <svg className="h-6 w-6" viewBox="0 0 24 24" fill="none">
-                  <path
-                    d="M3 6h18M3 12h18M3 18h18"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                  />
-                </svg>
-              )}
-            </button>
-          </div>
+          {/* Mobile Toggle */}
+          <button
+            onClick={() => setOpen((v) => !v)}
+            aria-expanded={open}
+            className="md:hidden p-2 rounded-md inline-flex items-center justify-center text-gray-700 hover:bg-gray-100"
+          >
+            {open ? (
+              <svg className="h-6 w-6" viewBox="0 0 24 24" fill="none">
+                <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" strokeWidth="2" />
+              </svg>
+            ) : (
+              <svg className="h-6 w-6" viewBox="0 0 24 24" fill="none">
+                <path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" strokeWidth="2" />
+              </svg>
+            )}
+          </button>
         </div>
 
         {/* Mobile Menu */}
         <div
-          className={`md:hidden mt-3 transition-[max-height,opacity] duration-200 overflow-hidden ${
+          className={`md:hidden mt-3 transition-[max-height,opacity] duration-300 overflow-hidden ${
             open ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"
           }`}
         >

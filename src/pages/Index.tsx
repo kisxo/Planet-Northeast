@@ -19,7 +19,6 @@ const Index = () => {
         <Festivals />
         <Phototours />
         <Features />
-
         <Testimonials />
       </main>
       <Footer />
