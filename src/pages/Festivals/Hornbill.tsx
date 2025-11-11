@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Hornbillimg from "@/assets/Hornbill2.jpg";
 import Hornbillcamp from "@/assets/hornbillcamp.jpg";
 import HornbillPackage from "@/assets/Hornbillpack.jpg";
+
 const Hornbill = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -15,7 +16,7 @@ const Hornbill = () => {
     email: "",
     date: "",
     passengers: "",
-    pickupPoint: "",
+    package: "",
     additionalInfo: "",
   });
 
@@ -28,13 +29,27 @@ const Hornbill = () => {
     setFormData(updatedData);
 
     let newBasePrice = basePrice;
-    if (name === "pickupPoint") {
+
+    // ✅ Package-based price calculation
+    if (name === "package") {
       switch (value) {
-        case "Kohima":
-          newBasePrice = 7499;
+        case "Hornbill Camping — ₹999/- (Breakfast)":
+          newBasePrice = 999;
           break;
-        case "Dimapur":
-          newBasePrice = 6999;
+        case "Hornbill Camping — ₹1350/- (Breakfast & Dinner)":
+          newBasePrice = 1350;
+          break;
+        case "Hornbill & Dzukou — ₹6,499/- (3N/4D | Meals & Transport)":
+          newBasePrice = 6499;
+          break;
+        case "Hornbill, Dzukou & Local Experiences — ₹10,999/- (4N/5D)":
+          newBasePrice = 10999;
+          break;
+        case "Hornbill, Dzukou & Local Exp. Extended — ₹11,999/- (5N/6D)":
+          newBasePrice = 11999;
+          break;
+        case "Complete Hornbill (With Dzukou & Offbeat Tours) — ₹18,599/- (10 Days)":
+          newBasePrice = 18599;
           break;
         default:
           newBasePrice = null;
@@ -42,10 +57,10 @@ const Hornbill = () => {
       setBasePrice(newBasePrice);
     }
 
-    if (name === "passengers" || name === "pickupPoint") {
+    if (name === "passengers" || name === "package") {
       const passengers =
         name === "passengers" ? Number(value) : Number(updatedData.passengers);
-      const effectiveBase = name === "pickupPoint" ? newBasePrice : basePrice;
+      const effectiveBase = name === "package" ? newBasePrice : basePrice;
 
       if (effectiveBase && passengers > 0) {
         const total = effectiveBase * passengers;
@@ -62,7 +77,18 @@ const Hornbill = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert("Booking submitted successfully!");
+    alert("✅ Booking submitted successfully!");
+    setFormData({
+      name: "",
+      phone: "",
+      email: "",
+      date: "",
+      passengers: "",
+      package: "",
+      additionalInfo: "",
+    });
+    setBasePrice(null);
+    setTotalPrice(null);
   };
 
   return (
@@ -82,7 +108,7 @@ const Hornbill = () => {
               Hornbill Festival, Nagaland
             </h1>
             <p className="text-lg md:text-2xl text-gray-200 leading-relaxed">
-              Experience the “Festival of Festivals” — 1st to 10th December{" "}
+              Experience the “Festival of Festivals” — 1st to 10th December
               <br />
               <span className="text-yellow-400 font-semibold">
                 Price Starting from ₹999 /- Per Person
@@ -146,24 +172,21 @@ const Hornbill = () => {
             </h2>
             <ul className="space-y-3 text-gray-700">
               <li>
-                🏕️ <b>Hornbill Camping</b> — ₹999/- (Breakfast) or ₹1350/-
-                (Breakfast & Dinner)
+                🏕️ <b>Hornbill Camping</b> — ₹999/- (Breakfast) or ₹1350/- (B&D)
               </li>
               <li>
-                🌄 <b>Hornbill & Dzukou</b> — ₹6,499/- (3N/4D | Breakfast,
-                Dinner & Transport)
+                🌄 <b>Hornbill & Dzukou</b> — ₹6,499/- (3N/4D | Meals &
+                Transport)
               </li>
               <li>
                 🏞️ <b>Hornbill, Dzukou & Local Experiences</b> — ₹10,999/-
                 (4N/5D)
               </li>
               <li>
-                🌿 <b>Hornbill, Dzukou & Local Exp. Extended</b> — ₹11,999/-
-                (5N/6D)
+                🌿 <b>Hornbill Extended</b> — ₹11,999/- (5N/6D)
               </li>
               <li>
-                🎉 <b>Complete Hornbill (With Dzukou & Offbeat Tours)</b> —
-                ₹18,599/- (10 Days)
+                🎉 <b>Complete Hornbill Tour</b> — ₹18,599/- (10 Days)
               </li>
             </ul>
           </div>
@@ -191,25 +214,16 @@ const Hornbill = () => {
             </p>
             <p className="text-gray-700 leading-relaxed mb-4">
               Our campsite isn’t just a place to stay — it’s where the real
-              experience begins. Tucked close to Kisama Heritage Village, right
-              where the Hornbill Festival comes alive, it offers the perfect mix
-              of energy and peace.
+              experience begins. It offers the perfect mix of energy and peace.
             </p>
             <p className="text-gray-700 leading-relaxed mb-4">
-              You’ll wake up to the sound of birds and distant festival drums,
-              surrounded by hills and morning mist. Evenings are all about
-              bonfires, music, laughter, and stories shared under a starry sky.
+              You’ll wake up to the sound of birds and distant drums, surrounded
+              by misty hills. Evenings are for bonfires, music, and laughter
+              under the stars.
             </p>
             <p className="text-gray-700 leading-relaxed mb-4">
-              We keep things simple but comfortable — cozy tents, clean spaces,
-              hearty local meals, and a warm team to make you feel at home. It’s
-              a place to slow down, meet new people, and really feel the rhythm
-              of Nagaland.
-            </p>
-            <p className="text-gray-700 leading-relaxed">
-              Whether you’re here for the festival, photography, or just to
-              unwind, our campsite is where you’ll truly connect with the land
-              and its people.
+              Simple but comfortable — cozy tents, clean meals, and a warm team
+              to make you feel at home.
             </p>
           </div>
 
@@ -285,18 +299,36 @@ const Hornbill = () => {
               />
             </div>
 
+            {/* ✅ Updated Select Package Field */}
             <div>
-              <label className="block mb-2 font-medium">Pickup Point</label>
+              <label className="block mb-2 font-medium">Select Package</label>
               <select
-                name="pickupPoint"
-                value={formData.pickupPoint}
+                name="package"
+                value={formData.package}
                 onChange={handleChange}
                 required
                 className="w-full border border-gray-200 p-3 rounded-lg bg-gray-50 focus:border-gray-400 outline-none shadow-sm transition-all"
               >
-                <option value="">Select Pickup Point</option>
-                {/* <option value="Kohima">Kohima – ₹7499</option> */}
-                <option value="Dimapur">Dimapur – ₹6499</option>
+                <option value="">Select Your Package</option>
+                <option value="Hornbill Camping — ₹999/- (Breakfast)">
+                  🏕️ Hornbill Camping — ₹999/- (Breakfast)
+                </option>
+                <option value="Hornbill Camping — ₹1350/- (Breakfast & Dinner)">
+                  🏕️ Hornbill Camping — ₹1350/- (Breakfast & Dinner)
+                </option>
+                <option value="Hornbill & Dzukou — ₹6,499/- (3N/4D | Meals & Transport)">
+                  🌄 Hornbill & Dzukou — ₹6,499/- (3N/4D | Meals & Transport)
+                </option>
+                <option value="Hornbill, Dzukou & Local Experiences — ₹10,999/- (4N/5D)">
+                  🏞️ Hornbill, Dzukou & Local Experiences — ₹10,999/- (4N/5D)
+                </option>
+                <option value="Hornbill, Dzukou & Local Exp. Extended — ₹11,999/- (5N/6D)">
+                  🌿 Hornbill, Dzukou & Local Exp. Extended — ₹11,999/- (5N/6D)
+                </option>
+                <option value="Complete Hornbill (With Dzukou & Offbeat Tours) — ₹18,599/- (10 Days)">
+                  🎉 Complete Hornbill (With Dzukou & Offbeat Tours) — ₹18,599/-
+                  (10 Days)
+                </option>
               </select>
 
               {totalPrice && (
