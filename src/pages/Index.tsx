@@ -7,7 +7,7 @@ import Testimonials from "@/components/Testimonials";
 import Footer from "@/components/Footer";
 import Trek from "@/components/Trek";
 import Festivals from "@/components/Festival";
-import Phototours from "@/components/Phototours"
+import Phototours from "@/components/Phototours";
 const Index = () => {
   return (
     <div className="min-h-screen">
@@ -15,11 +15,11 @@ const Index = () => {
       <main>
         <Hero />
         <Tours />
-        <Trek/>
-        <Festivals/>
-        <Phototours/>
+        <Trek />
+        <Festivals />
+        <Phototours />
         <Features />
-        <Destinations />
+
         <Testimonials />
       </main>
       <Footer />
