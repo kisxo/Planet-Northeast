@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Calendar, Music } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import ziro from "@/assets/ziro.jpg";
 import Hornbill from "@/assets/hornbill.jpg";
 const festivals = [
@@ -23,6 +23,8 @@ const festivals = [
 ];
 
 const Festivals = () => {
+
+  const navigate = useNavigate();
   return (
     <section id="festivals" className="py-16 bg-muted/30">
       <div className="container mx-auto px-6">
@@ -43,7 +45,7 @@ const Festivals = () => {
               className="bg-card rounded-2xl overflow-hidden shadow-soft hover:shadow-hover transition-all duration-300 group cursor-pointer"
             >
               <div className="relative overflow-hidden aspect-[4/3]">
-                <img
+                <img onClick={()=>{navigate(festival.link);}}
                   src={festival.image}
                   alt={festival.title}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"

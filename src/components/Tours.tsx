@@ -4,7 +4,7 @@ import Machuka from "@/assets/Machuka.jpg";
 import Meghalaya from "@/assets/meghalaya.jpg";
 import { Button } from "@/components/ui/button";
 import { Clock, Users } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const tours = [
   {
@@ -13,7 +13,7 @@ const tours = [
     duration: "5 Days | 4 Nights",
     groupSize: "Private/Group Tour",
     price: "From ₹9,999 /- Per Person",
-    link: "tours/tawang",
+    link: "/tours/tawang",
   },
   {
     title: "Anini Tour",
@@ -42,6 +42,8 @@ const tours = [
 ];
 
 const Tours = () => {
+
+    const navigate = useNavigate();
   return (
     <section id="tours" className="py-16 bg-muted/30">
       <div className="container mx-auto px-6">
@@ -60,7 +62,7 @@ const Tours = () => {
               className="bg-card rounded-2xl overflow-hidden shadow-soft hover:shadow-hover transition-all duration-300 group cursor-pointer"
             >
               <div className="relative overflow-hidden aspect-[4/3]">
-                <img
+                <img onClick={()=>{navigate(tour.link);}}
                   src={tour.image}
                   alt={tour.title}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"

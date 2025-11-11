@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Camera, MapPin } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Np from "@/assets/nagalandphotography.jpg";
 import apatani from "@/assets/apatani.jpg";
 const photoTours = [
@@ -23,6 +23,8 @@ const photoTours = [
 ];
 
 const PhotoTours = () => {
+
+  const navigate = useNavigate();
   return (
     <section id="phototours" className="py-16 bg-muted/30">
       <div className="container mx-auto px-6">
@@ -45,7 +47,7 @@ const PhotoTours = () => {
               className="bg-card rounded-2xl overflow-hidden shadow-soft hover:shadow-hover transition-all duration-300 group cursor-pointer"
             >
               <div className="relative overflow-hidden aspect-[4/3]">
-                <img
+                <img onClick={()=>{navigate(tour.link);}}
                   src={tour.image}
                   alt={tour.title}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
