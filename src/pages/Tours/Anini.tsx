@@ -12,10 +12,47 @@ export default function Anini() {
     maleCount: "",
     femaleCount: "",
     additionalInfo: "",
+    pickupPoint: "",
   });
 
+  const [basePrice, setBasePrice] = useState(null);
+  const [totalPrice, setTotalPrice] = useState(null);
+
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    const { name, value } = e.target;
+    const updatedData = { ...formData, [name]: value };
+    setFormData(updatedData);
+
+    // Update base price dynamically based on pickup point
+    let newBasePrice = basePrice;
+    if (name === "pickupPoint") {
+      switch (value) {
+        case "Dibrugarh":
+          newBasePrice = 14500;
+          break;
+        default:
+          newBasePrice = null;
+      }
+      setBasePrice(newBasePrice);
+    }
+
+    // Calculate total price if both pickupPoint and passengers are selected
+    if (name === "passengers" || name === "pickupPoint") {
+      const passengers =
+        name === "passengers" ? Number(value) : Number(updatedData.passengers);
+      const effectiveBase = name === "pickupPoint" ? newBasePrice : basePrice;
+
+      if (effectiveBase && passengers > 0) {
+        const total = effectiveBase * passengers;
+        setTotalPrice(
+          `₹${total.toLocaleString()} /- Total (${passengers} Person${
+            passengers > 1 ? "s" : ""
+          })`
+        );
+      } else {
+        setTotalPrice(null);
+      }
+    }
   };
 
   const handleSubmit = (e) => {
@@ -28,177 +65,223 @@ export default function Anini() {
       <Navbar />
 
       {/* ---------- HERO SECTION ---------- */}
-      <section className="relative h-[70vh] w-full overflow-hidden">
+      <section className="relative h-[75vh] w-full overflow-hidden">
         <img
-          src="/images/anini.jpg"
+          src="https://oddessemania.in/wp-content/uploads/2025/02/WhatsApp-Image-2025-04-19-at-5.43.28-PM-1-1024x768.jpeg"
           alt="Anini Tour"
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
-          <div className="text-center text-white px-6">
-            <h1 className="text-5xl md:text-6xl font-bold tracking-wide mb-3">
-              Anini Tour
+        <div className="absolute inset-0 bg-gradient-to-b from-black/50 to-black/70 flex items-center justify-center text-center px-6">
+          <div className="text-white max-w-3xl">
+            <h1 className="text-5xl md:text-7xl font-extrabold mb-4 tracking-wide">
+              Discover Anini
             </h1>
-            <p className="text-lg md:text-xl max-w-2xl mx-auto text-gray-200">
-              Explore the untouched paradise of Arunachal Pradesh
+            <p className="text-lg md:text-2xl text-gray-200 leading-relaxed">
+              From Dibrugarh — 6 Days / 5 Nights <br />
+              <span className="text-yellow-400 font-semibold">
+                Price Starting from ₹14,500 /- Per Person
+              </span>
             </p>
+            <a
+              href="#booking"
+              className="inline-block mt-8 bg-white text-black font-medium px-8 py-3 rounded-lg shadow-lg hover:bg-gray-100 transition duration-300"
+            >
+              Book Now
+            </a>
           </div>
         </div>
       </section>
 
-      {/* ---------- DESCRIPTION ---------- */}
-      <section className="max-w-5xl mx-auto px-6 py-14 border-b border-gray-200">
-        <h2 className="text-3xl font-bold mb-4 text-gray-900">
-          About the Journey
+      {/* ---------- TOUR OVERVIEW ---------- */}
+      <section className="max-w-5xl mx-auto px-6 py-16 border-b border-gray-200">
+        <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
+          Anini and Dibang Valley Tour Itinerary
         </h2>
-        <p className="text-lg leading-relaxed text-gray-600">
-          Nestled in the Dibang Valley, Anini offers breathtaking landscapes,
-          untouched nature, and a serene escape from the modern world. From
-          misty mountains to tribal villages, every corner of Anini whispers
-          peace and purity. Enjoy scenic drives, cultural exploration, and
-          tranquil moments under starry skies.
+        <p className="text-gray-500 mb-8 font-medium">
+          Duration: <span className="font-semibold">6 Days / 5 Nights</span> |
+          From <span className="font-semibold">Dibrugarh</span>
         </p>
-      </section>
 
-      {/* ---------- ITINERARY ---------- */}
-      <section className="max-w-5xl mx-auto px-6 py-14 border-b border-gray-200">
-        <h2 className="text-3xl font-bold mb-6 text-gray-900">Itinerary</h2>
         <div className="space-y-4">
           {[
-            "Day 1: Arrival at Anini, check-in, and local sightseeing.",
-            "Day 2: Visit tribal villages and enjoy local cuisine.",
-            "Day 3: Trek to the nearby mountains and picnic by riverside.",
-            "Day 4: Explore nature trails and return journey.",
+            "Day 1: Arrival in Dibrugarh and drive to Roing via the 9.2 km Dhola Sadiya Bridge. Evening at Dambuk riverside.",
+            "Day 2: Drive to Anini through the scenic Mayodia Pass. Check into a homestay and relax.",
+            "Day 3: Visit Mipi village and Dibang Wildlife Sanctuary. Explore local farms and culture.",
+            "Day 4: Explore the breathtaking Dri Valley and enjoy mountain landscapes.",
+            "Day 5: Return journey from Anini to Roing. Evening leisure and overnight stay.",
+            "Day 6: Depart from Roing to Dibrugarh Airport or Railway Station.",
           ].map((day, index) => (
             <div
               key={index}
-              className="border border-gray-200 rounded-xl p-4 shadow-sm hover:shadow-md transition duration-200"
+              className="border border-gray-200 rounded-xl p-5 shadow-md hover:shadow-lg hover:border-black transition duration-300 bg-gradient-to-r from-gray-50 to-white"
             >
-              <p className="font-medium">{day}</p>
+              <p className="font-medium text-gray-800">{day}</p>
             </div>
           ))}
         </div>
       </section>
 
-      {/* ---------- INCLUDES & EXCLUDES ---------- */}
-      <section className="max-w-5xl mx-auto px-6 py-14 border-b border-gray-200">
-        <div className="grid md:grid-cols-2 gap-10">
-          <div>
+      {/* ---------- PACKAGE DETAILS ---------- */}
+      <section className="max-w-5xl mx-auto px-6 py-16 border-b border-gray-200">
+        <div className="grid md:grid-cols-2 gap-12">
+          <div className="bg-green-50 rounded-2xl p-6">
             <h3 className="text-2xl font-semibold mb-4 text-green-700">
-              Includes
+              Package Inclusions
             </h3>
             <ul className="space-y-2 text-gray-700">
-              <li>✅ Accommodation (3 Nights / 4 Days)</li>
-              <li>✅ Breakfast & Dinner</li>
-              <li>✅ Local Transport & Driver</li>
-              <li>✅ Tour Guide</li>
+              <li>
+                ✅ Guided sightseeing to Mayodia Pass, Mipi, Dri Valley & more
+              </li>
+              <li>✅ AC vehicle for transfers & tours</li>
+              <li>✅ Daily breakfast included</li>
+              <li>✅ Comfortable hotel & homestay accommodations</li>
+              <li>✅ Driver & fuel charges, tolls, parking included</li>
             </ul>
           </div>
-          <div>
+
+          <div className="bg-red-50 rounded-2xl p-6">
             <h3 className="text-2xl font-semibold mb-4 text-red-700">
-              Excludes
+              Package Exclusions
             </h3>
             <ul className="space-y-2 text-gray-700">
-              <li>❌ Airfare or Train Tickets</li>
-              <li>❌ Lunch</li>
-              <li>❌ Personal Expenses</li>
-              <li>❌ Travel Insurance</li>
+              <li>❌ Lunch & dinner</li>
+              <li>❌ Entry fees at parks or attractions</li>
+              <li>❌ Optional treks or activities</li>
+              <li>❌ Personal expenses (snacks, souvenirs, etc.)</li>
             </ul>
           </div>
         </div>
       </section>
 
       {/* ---------- BOOKING FORM ---------- */}
-      <section className="max-w-5xl mx-auto px-6 py-14">
-        <div className="bg-white rounded-2xl shadow-xl p-8 border border-gray-100">
-          <h2 className="text-4xl font-bold text-center mb-8 text-gray-900">
+      <section id="booking" className="max-w-5xl mx-auto px-6 py-16">
+        <div className="bg-gradient-to-br from-white via-gray-50 to-gray-100 rounded-2xl shadow-2xl p-10 border border-gray-200">
+          <h2 className="text-4xl font-bold text-center mb-10 text-gray-900">
             Book Your Anini Adventure
           </h2>
 
           <form
             onSubmit={handleSubmit}
-            className="grid md:grid-cols-2 gap-6 text-gray-700"
+            className="grid md:grid-cols-2 gap-8 text-gray-700"
           >
-            <input
-              type="text"
-              name="name"
-              placeholder="Full Name"
-              value={formData.name}
-              onChange={handleChange}
-              required
-              className="border border-gray-300 p-3 rounded-lg focus:ring-2 focus:ring-black"
-            />
-
-            <input
-              type="tel"
-              name="phone"
-              placeholder="Phone Number"
-              value={formData.phone}
-              onChange={handleChange}
-              required
-              className="border border-gray-300 p-3 rounded-lg focus:ring-2 focus:ring-black"
-            />
-
-            <input
-              type="email"
-              name="email"
-              placeholder="Email"
-              value={formData.email}
-              onChange={handleChange}
-              required
-              className="border border-gray-300 p-3 rounded-lg focus:ring-2 focus:ring-black"
-            />
-
-            <input
-              type="date"
-              name="date"
-              value={formData.date}
-              onChange={handleChange}
-              required
-              className="border border-gray-300 p-3 rounded-lg focus:ring-2 focus:ring-black"
-            />
-
-            <input
-              type="number"
-              name="passengers"
-              placeholder="No. of Passengers"
-              value={formData.passengers}
-              onChange={handleChange}
-              required
-              className="border border-gray-300 p-3 rounded-lg focus:ring-2 focus:ring-black"
-            />
-
-            <div className="flex gap-4">
+            {/* Full Name */}
+            <div>
+              <label className="block mb-2 font-medium">Full Name</label>
               <input
-                type="number"
-                name="maleCount"
-                placeholder="Male"
-                value={formData.maleCount}
+                type="text"
+                name="name"
+                placeholder="Enter your full name"
+                value={formData.name}
                 onChange={handleChange}
-                className="border border-gray-300 p-3 rounded-lg focus:ring-2 focus:ring-black w-full"
-              />
-              <input
-                type="number"
-                name="femaleCount"
-                placeholder="Female"
-                value={formData.femaleCount}
-                onChange={handleChange}
-                className="border border-gray-300 p-3 rounded-lg focus:ring-2 focus:ring-black w-full"
+                required
+                className="w-full border border-gray-200 p-3 rounded-lg bg-gray-50 focus:border-gray-400 focus:ring-0 outline-none shadow-sm transition-all"
               />
             </div>
 
-            <textarea
-              name="additionalInfo"
-              placeholder="Additional Information"
-              value={formData.additionalInfo}
-              onChange={handleChange}
-              className="border border-gray-300 p-3 rounded-lg focus:ring-2 focus:ring-black md:col-span-2"
-            ></textarea>
+            {/* Phone Number */}
+            <div>
+              <label className="block mb-2 font-medium">Phone Number</label>
+              <input
+                type="tel"
+                name="phone"
+                placeholder="Enter your phone number"
+                value={formData.phone}
+                onChange={handleChange}
+                required
+                className="w-full border border-gray-200 p-3 rounded-lg bg-gray-50 focus:border-gray-400 focus:ring-0 outline-none shadow-sm transition-all"
+              />
+            </div>
 
-            <div className="md:col-span-2 text-center">
+            {/* Email */}
+            <div>
+              <label className="block mb-2 font-medium">Email Address</label>
+              <input
+                type="email"
+                name="email"
+                placeholder="Enter your email"
+                value={formData.email}
+                onChange={handleChange}
+                required
+                className="w-full border border-gray-200 p-3 rounded-lg bg-gray-50 focus:border-gray-400 focus:ring-0 outline-none shadow-sm transition-all"
+              />
+            </div>
+
+            {/* Date */}
+            <div>
+              <label className="block mb-2 font-medium">
+                Preferred Travel Date
+              </label>
+              <input
+                type="date"
+                name="date"
+                value={formData.date}
+                onChange={handleChange}
+                required
+                className="w-full border border-gray-200 p-3 rounded-lg bg-gray-50 focus:border-gray-400 focus:ring-0 outline-none shadow-sm transition-all"
+              />
+            </div>
+
+            {/* Pickup Point */}
+            <div>
+              <label className="block mb-2 font-medium">Pickup Point</label>
+              <select
+                name="pickupPoint"
+                value={formData.pickupPoint}
+                onChange={handleChange}
+                required
+                className="w-full border border-gray-200 p-3 rounded-lg bg-gray-50 focus:border-gray-400 focus:ring-0 outline-none shadow-sm transition-all"
+              >
+                <option value="">Select Pickup Point</option>
+                <option value="Dibrugarh">Dibrugarh</option>
+              </select>
+
+              {totalPrice && (
+                <div className="mt-4 text-center animate-fadeIn">
+                  <p className="text-lg font-medium text-gray-600">
+                    Total Price:
+                  </p>
+                  <p className="text-3xl font-extrabold bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent drop-shadow-lg mt-1">
+                    {totalPrice}
+                  </p>
+                </div>
+              )}
+            </div>
+
+            {/* Number of Passengers */}
+            <div>
+              <label className="block mb-2 font-medium">
+                Number of Passengers
+              </label>
+              <input
+                type="number"
+                name="passengers"
+                placeholder="Enter number of passengers"
+                value={formData.passengers}
+                onChange={handleChange}
+                required
+                className="w-full border border-gray-200 p-3 rounded-lg bg-gray-50 focus:border-gray-400 focus:ring-0 outline-none shadow-sm transition-all [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+              />
+            </div>
+
+            {/* Additional Info */}
+            <div className="md:col-span-2">
+              <label className="block mb-2 font-medium">
+                Additional Information
+              </label>
+              <textarea
+                name="additionalInfo"
+                placeholder="Any special requests or notes?"
+                value={formData.additionalInfo}
+                onChange={handleChange}
+                className="w-full border border-gray-200 p-3 rounded-lg bg-gray-50 focus:border-gray-400 focus:ring-0 outline-none shadow-sm transition-all"
+              ></textarea>
+            </div>
+
+            {/* Submit Button */}
+            <div className="md:col-span-2 text-center mt-6">
               <button
                 type="submit"
-                className="bg-black text-white px-10 py-3 rounded-lg font-medium hover:bg-gray-800 transition duration-200"
+                className="bg-black text-white px-10 py-3 rounded-lg font-medium hover:bg-gray-800 transition duration-300 shadow-md hover:shadow-lg"
               >
                 Submit Booking
               </button>
