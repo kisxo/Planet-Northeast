@@ -1,8 +1,11 @@
 import Footer from "@/components/Footer";
 import Navbar from "../../components/Navbar";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const Hornbill = () => {
+        useEffect(() => {
+      window.scrollTo(0, 0);
+    }, []);
   const [formData, setFormData] = useState({
     name: "",
     phone: "",

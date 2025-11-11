@@ -1,8 +1,11 @@
 import Footer from "@/components/Footer";
 import Navbar from "../../components/Navbar";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const GlowLake = () => {
+        useEffect(() => {
+      window.scrollTo(0, 0);
+    }, []);
   // List of pickup points and their base prices
   const pickupPoints = [
     { label: "Tinsukia", price: 5999 },

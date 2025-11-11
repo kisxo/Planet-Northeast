@@ -1,6 +1,9 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const BookingForm = () => {
+        useEffect(() => {
+      window.scrollTo(0, 0);
+    }, []);
   const [formData, setFormData] = useState({
     name: "",
     phone: "",

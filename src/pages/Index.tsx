@@ -8,7 +8,12 @@ import Footer from "@/components/Footer";
 import Trek from "@/components/Trek";
 import Festivals from "@/components/Festival";
 import Phototours from "@/components/Phototours";
+import { useEffect } from "react";
 const Index = () => {
+      useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="min-h-screen">
       <Navbar />

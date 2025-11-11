@@ -1,8 +1,11 @@
 import Navbar from "../../components/Navbar";
 import Footer from "@/components/Footer";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function Mechuka() {
+        useEffect(() => {
+      window.scrollTo(0, 0);
+    }, []);
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
