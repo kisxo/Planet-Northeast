@@ -5,11 +5,18 @@ import {
   FaPhone,
   FaMapMarkerAlt,
 } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 export default function Contact() {
+  const navigate = useNavigate();
+
+  const handleBack = () => {
+    navigate("/"); // Redirect to homepage
+  };
+
   return (
     <div className="bg-black text-white min-h-screen flex flex-col">
-      {/* HERO SECTuION */}
+      {/* HERO SECTION */}
       <section className="relative flex flex-col justify-center items-center text-center py-20 px-6 overflow-hidden">
         {/* Background Image */}
         <div
@@ -93,6 +100,16 @@ export default function Contact() {
           </div>
         </div>
       </section>
+
+      {/* BACK BUTTON */}
+      <div className="flex justify-center mb-10">
+        <button
+          onClick={handleBack}
+          className="px-6 py-2 border border-white text-white rounded-md hover:bg-white hover:text-black transition font-medium"
+        >
+          ← Back to Homepage
+        </button>
+      </div>
 
       {/* FOOTER */}
       <footer className="mt-auto text-center border-t border-gray-800 py-6 text-gray-500 text-sm">
