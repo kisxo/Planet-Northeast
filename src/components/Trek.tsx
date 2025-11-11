@@ -1,21 +1,22 @@
 import { Button } from "@/components/ui/button";
 import { Clock, Users } from "lucide-react";
 import { Link } from "react-router-dom";
-
+import Dzokou from "@/assets/Dzukou.jpg";
+import glow from "@/assets/glowlake.jpg";
 const treks = [
   {
     title: "Dzukou Valley Trek",
-    image: "https://chalohoppo.com/wp-content/uploads/2025/03/76-1024x576.jpg",
+    image: Dzokou,
     duration: "3 Days | 2 Nights",
-    groupSize: "Group Trekking",
+    groupSize: "Private / Group Tour",
     price: "From ₹5,399 /- Per Person",
     link: "/treks/dzukou-valley",
   },
   {
     title: "Glow Lake Trek",
-    image: "https://live.staticflickr.com/789/40374032735_2ba86c2c1f_b.jpg",
+    image: glow,
     duration: "3 Days | 2 Nights",
-    groupSize: "Group Trekking",
+    groupSize: "Private / Group Tour",
     price: "From ₹5,999 /- Per Person",
     link: "/treks/glow-lake",
   },
@@ -29,8 +30,8 @@ const Treks = () => {
         <div className="max-w-3xl mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">Our Treks</h2>
           <p className="text-lg text-muted-foreground">
-            Explore handpicked trekking adventures across the Northeast — rolling valleys, 
-            untouched forests, and unforgettable experiences.
+            Explore handpicked trekking adventures across the Northeast —
+            rolling valleys, untouched forests, and unforgettable experiences.
           </p>
         </div>
 

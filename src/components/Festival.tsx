@@ -1,22 +1,23 @@
 import { Button } from "@/components/ui/button";
 import { Calendar, Music } from "lucide-react";
 import { Link } from "react-router-dom";
-
+import ziro from "@/assets/ziro.jpg";
+import Hornbill from "@/assets/hornbill.jpg";
 const festivals = [
   {
     title: "Ziro Music Festival",
-    image: "https://tripoventure.com/wp-content/uploads/2025/07/image-5.png",
-    duration: "4 Days | 3 Nights",
+    image: ziro,
+    duration: "5 Days | 4 Nights",
     groupSize: "Open Festival",
-    price: "From ₹5,499 /- Per Person",
+    price: "From ₹1,499 /- Per Person",
     link: "/festivals/ziromusic",
   },
   {
     title: "Hornbill Festival",
-    image: "https://www.hindustantimes.com/ht-img/img/2023/12/01/1600x900/hornbill_festival_1701430511736_1701430521595.jpg",
-    duration: "10 Days | 9 Nights",
+    image: Hornbill,
+    duration: "December 1st to 10th",
     groupSize: "Open Festival",
-    price: "From ₹14,499 /- Per Person",
+    price: "From ₹999 /- Per Person",
     link: "/festivals/ziromusic",
   },
 ];
@@ -29,8 +30,8 @@ const Festivals = () => {
         <div className="max-w-3xl mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">Our Festivals</h2>
           <p className="text-lg text-muted-foreground">
-            Experience the rhythm, colors, and culture of Northeast India — from mountain 
-            valleys filled with music to vibrant tribal celebrations.
+            Experience the rhythm, colors, and culture of Northeast India — from
+            mountain valleys filled with music to vibrant tribal celebrations.
           </p>
         </div>
 
@@ -63,7 +64,9 @@ const Festivals = () => {
                 </div>
 
                 <div className="flex items-center justify-between">
-                  <span className="text-lg font-semibold">{festival.price}</span>
+                  <span className="text-lg font-semibold">
+                    {festival.price}
+                  </span>
                   <Link to={festival.link} className="border rounded-sm p-2">
                     Book Now
                   </Link>

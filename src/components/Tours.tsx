@@ -1,6 +1,7 @@
-import Shillong from "@/assets/Shillong & Cherrapunji Escape.png";
-import tawangRoad from "@/assets/tawang_road.png";
-import tourZiro from "@/assets/Ziro Valley.png";
+import Anini from "@/assets/anini.jpg";
+import tawangRoad from "@/assets/tawang.jpg";
+import Machuka from "@/assets/Machuka.jpg";
+import Meghalaya from "@/assets/meghalaya.jpg";
 import { Button } from "@/components/ui/button";
 import { Clock, Users } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -16,7 +17,7 @@ const tours = [
   },
   {
     title: "Anini Tour",
-    image: Shillong, // Replace with your image import
+    image: Anini, // Replace with your image import
     duration: "6 Days | 5 Nights",
     groupSize: "Private / Group Tour",
     price: "From ₹14,500 /- Per Person",
@@ -24,55 +25,49 @@ const tours = [
   },
   {
     title: "Mechuka Tour",
-    image: tourZiro, // Replace with your image import
+    image: Machuka, // Replace with your image import
     duration: "6 Days | 5 Nights",
     groupSize: "Private / Group Tour",
-    price: "From ₹— (Ask for Quote)",
+    price: "From ₹14,500 /- Per Person",
     link: "/tours/mechuka",
   },
   {
     title: "Meghalaya Tour",
-    image: tourZiro, // Replace with your image import
+    image: Meghalaya, // Replace with your image import
     duration: "5 Days | 4 Nights",
     groupSize: "Private / Group Tour",
-    price: "From ₹— (Custom Pricing)",
+    price: "From ₹9,999/- Per Person",
     link: "/tours/meghalaya",
-  }
+  },
 ];
-
-
 
 const Tours = () => {
   return (
     <section id="tours" className="py-16 bg-muted/30">
       <div className="container mx-auto px-6">
         <div className="max-w-3xl mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Our Tours
-          </h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-6">Our Tours</h2>
           <p className="text-lg text-muted-foreground">
-            Discover our most loved adventures.
-Handpicked routes. Authentic experiences. Memories for a lifetime.
+            Discover our most loved adventures. Handpicked routes. Authentic
+            experiences. Memories for a lifetime.
           </p>
         </div>
-        
+
         <div className="grid md:grid-cols-3 gap-8">
           {tours.map((tour) => (
-            <div 
+            <div
               key={tour.title}
               className="bg-card rounded-2xl overflow-hidden shadow-soft hover:shadow-hover transition-all duration-300 group cursor-pointer"
             >
               <div className="relative overflow-hidden aspect-[4/3]">
-                <img 
+                <img
                   src={tour.image}
                   alt={tour.title}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-semibold mb-4">
-                  {tour.title}
-                </h3>
+                <h3 className="text-xl font-semibold mb-4">{tour.title}</h3>
                 <div className="flex items-center gap-4 text-sm text-muted-foreground mb-4">
                   <div className="flex items-center gap-2">
                     <Clock className="h-4 w-4" />
@@ -93,7 +88,7 @@ Handpicked routes. Authentic experiences. Memories for a lifetime.
             </div>
           ))}
         </div>
-        
+
         <div className="text-center mt-12">
           <Button variant="default" size="lg">
             View All Tours

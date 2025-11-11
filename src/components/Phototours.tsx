@@ -1,22 +1,23 @@
 import { Button } from "@/components/ui/button";
 import { Camera, MapPin } from "lucide-react";
 import { Link } from "react-router-dom";
-
+import Np from "@/assets/nagalandphotography.jpg";
+import apatani from "@/assets/apatani.jpg";
 const photoTours = [
   {
     title: "Apatani Tribe Photography Tour – Arunachal Pradesh",
-    image: "https://nexplore.org/blog/wp-content/uploads/2024/09/best-destination-for-photography-tour.jpg",
-    duration: "5 Days | 4 Nights",
+    image: apatani,
+    duration: "6 Days | 5 Nights",
     groupSize: "Small Group / Custom Tour",
-    price: "From ₹19,999 /- Per Person",
+    price: "From ₹22,999 /- Per Person",
     link: "/photography-tours/apatani-tribe",
   },
   {
-    title: "Nagaland Cultural Photography Tour",
-    image: "https://www.tsiholidays.com/uploads/package/cover/MTcyNjgyNzQ4NgfLk.jpg",
-    duration: "6 Days | 5 Nights",
+    title: "Headhunters Photography Tour- ft. Aoleang Festival, Nagaland",
+    image: Np,
+    duration: "April 1st to 6th, Every year",
     groupSize: "Small Group / Custom Tour",
-    price: "From ₹21,499 /- Per Person",
+    price: "From ₹24,999 /- Per Person",
     link: "/photography-tours/nagaland",
   },
 ];
@@ -27,10 +28,12 @@ const PhotoTours = () => {
       <div className="container mx-auto px-6">
         {/* Header */}
         <div className="max-w-3xl mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">Photography Tours</h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+            Photography Tours
+          </h2>
           <p className="text-lg text-muted-foreground">
-            Capture the soul of Northeast India through your lens — vibrant tribes, 
-            timeless traditions, and breathtaking landscapes.
+            Capture the soul of Northeast India through your lens — vibrant
+            tribes, timeless traditions, and breathtaking landscapes.
           </p>
         </div>
 
