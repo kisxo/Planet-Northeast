@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";\
+import React, { useState, useRef } from "react";
 import img1 from "./nagaland/img1.jpg";
 import img2 from "./nagaland/img2.jpg";
 import img3 from "./nagaland/img3.jpg";
@@ -28,15 +28,6 @@ const images = [
 ];
 
 const BookingForm = () => {
-
-    const [page, setPage] = useState(1);
-    const canvasRef = useRef(null);
-
-    const { pdfDocument, pdfPage } = usePdf({
-        file: "test.pdf",
-        page,
-        canvasRef,
-    });
 
     const [formData, setFormData] = useState({
         name: "",
