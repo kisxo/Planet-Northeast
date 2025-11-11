@@ -19,7 +19,7 @@ const Index = () => {
         <Festivals />
         <Phototours />
         <Features />
-        <Testimonials />
+        {/* <Testimonials /> */}
       </main>
       <Footer />
     </div>

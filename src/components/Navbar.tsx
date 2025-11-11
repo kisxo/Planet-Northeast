@@ -59,6 +59,7 @@ export default function Header({ LinkComponent = RouterLink, links = null }) {
     { to: "/", label: "Home" },
     { to: "/about", label: "About" },
     { to: "/#tours", label: "Tours" },
+    { to: "/#festivals", label: "Festivals" },
     { to: "/#phototours", label: "Photography Tours" },
     { to: "/contact", label: "Contact Us" },
   ];
