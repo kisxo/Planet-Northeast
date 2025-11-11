@@ -1,5 +1,4 @@
 import React, { useState, useRef } from "react";
-import { usePdf } from "@mikecousins/react-pdf";
 import pdfDocument from "../../assets/nagaland.pdf";
 import PdfViewer from "../../components/PfdViewer";
 import img1 from "./nagaland/img1.jpg";
