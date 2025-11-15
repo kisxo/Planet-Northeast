@@ -43,31 +43,24 @@ const About = () => {
                   Our Mission
                 </h2>
                 <p className="text-lg text-muted-foreground leading-relaxed">
-                  We’re more than a travel company. We’re storytellers,
-                  bridge-builders, and explorers of culture.
+                  We believe in authentic travel experiences — not just seeing a
+                  place, but truly feeling it.
                 </p>
                 <p className="mt-6 text-muted-foreground leading-relaxed">
-                  Planet Northeast is your doorway to the living heartbeat of
-                  Northeast India — a land where misty mountains hum with tribal
-                  songs, rivers carry ancient legends, and every village has a
-                  story waiting to be shared.
+                  At Planet Northeast, we go beyond surface-level tourism to
+                  take you deeper into the heart of Northeast India — its
+                  people, traditions, landscapes, and stories
                 </p>
                 <p className="mt-6 text-muted-foreground leading-relaxed">
-                  With deep roots in the region and long-standing connections
-                  with local communities, we create authentic, immersive
-                  experiences that go far beyond the tourist trail. Our journeys
-                  celebrate people, traditions, and landscapes — connecting you
-                  to the warmth of local hosts, the rhythm of festivals, and the
-                  quiet wisdom of nature.
+                  We aim to help you connect, learn, and explore — to meet the
+                  locals, experience their unique cultural values, and
+                  understand the diverse flora, fauna, and ways of life that
+                  make this region extraordinary.
                 </p>
                 <p className="mt-6 text-muted-foreground leading-relaxed">
-                  Throughout the year, we curate hassle-free, value-driven trips
-                  across all eight Northeastern states — and are expanding our
-                  journeys to include Vietnam, Bhutan, and Nepal. Whether you
-                  seek offbeat adventure, photographic journeys, soulful treks,
-                  or deep cultural discovery, Planet Northeast is where your
-                  journey begins — and where stories stay with you long after
-                  you return home.
+                  Whether you’re a traveler, researcher, photographer, writer,
+                  or simply a curious soul, we guide and inspire you to know
+                  Northeast India in its truest form.
                 </p>
               </div>
               <div className="grid grid-cols-2 gap-6">
