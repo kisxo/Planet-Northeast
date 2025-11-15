@@ -20,6 +20,7 @@ import Anini from "./pages/Tours/Anini";
 import Mechuka from "./pages/Tours/Mechuka";
 import Meghalaya from "./pages/Tours/Meghalaya";
 import Tawang from "./pages/Tours/Tawang";
+import ZiroMusic from "./pages/Festivals/ZiroMusic";
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -50,7 +51,7 @@ const App = () => (
 
           {/* festivals */}
           <Route path="/festivals/hornbill" element={<Hornbill />} />
-
+          <Route path="/festivals/ziromusic" element={<ZiroMusic />} />
           {/* Photography */}
           <Route
             path="/photography-tours/apatani-tribe"
