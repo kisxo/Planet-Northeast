@@ -1,6 +1,6 @@
 import Anini from "@/assets/anini.jpg";
 import tawangRoad from "@/assets/tawang.jpg";
-import tawangGroup from "@/assets/tawang.jpg";
+import tawangGroup from "@/assets/tawangGrouptour.jpeg";
 import Machuka from "@/assets/Machuka.jpg";
 import Meghalaya from "@/assets/meghalaya.jpg";
 import { Button } from "@/components/ui/button";
@@ -13,7 +13,7 @@ const tours = [
     image: tawangRoad, // Replace with your image import
     duration: "5 Days | 4 Nights",
     groupSize: "Private Tour",
-    price: "From ₹9,999 /- Per Person",
+    price: "From ₹18,599 /- Per Person",
     link: "/tours/tawang",
   },
   {
@@ -22,7 +22,7 @@ const tours = [
     duration: "6 Days | 5 Nights",
     groupSize: "Group Tour",
     price: "From ₹13,999 /- Per Person",
-    link: "/tours/tawang",
+    link: "/tours/tawangGroup",
   },
   {
     title: "Anini Tour",

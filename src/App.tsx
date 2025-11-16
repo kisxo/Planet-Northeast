@@ -21,6 +21,7 @@ import Mechuka from "./pages/Tours/Mechuka";
 import Meghalaya from "./pages/Tours/Meghalaya";
 import Tawang from "./pages/Tours/Tawang";
 import ZiroMusic from "./pages/Festivals/ZiroMusic";
+import TawangGroup from "./pages/Tours/TawangGroup";
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -44,6 +45,7 @@ const App = () => (
           <Route path="/tours/mechuka" element={<Mechuka />} />
           <Route path="/tours/meghalaya" element={<Meghalaya />} />
           <Route path="/tours/tawang" element={<Tawang />} />
+          <Route path="/tours/tawangGroup" element={<TawangGroup />} />
 
           {/* treks */}
           <Route path="/treks/dzukou-valley" element={<DzukouValley />} />
