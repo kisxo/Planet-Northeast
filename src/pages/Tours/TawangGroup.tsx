@@ -2,6 +2,9 @@ import Navbar from "../../components/Navbar";
 import Footer from "@/components/Footer";
 import Web3Form from "@/components/Web3Form";
 import TawangBG from "@/assets/tawangGroupBG.jpeg";
+import Img1 from "@/assets/tawang2.png"; // add your actual image paths here
+import Img2 from "@/assets/tawang3.png";
+import Img3 from "@/assets/tawangOld.jpg";
 import { useEffect, useState } from "react";
 
 export default function TawangGroup() {
@@ -20,7 +23,7 @@ export default function TawangGroup() {
     additionalInfo: "",
   });
 
-  // ⭐ FIXED — default per-person price (from your banner)
+  // FIXED — default per-person price (from your banner)
   const [pricePerPerson, setPricePerPerson] = useState(14499);
   const [totalPrice, setTotalPrice] = useState(null);
 
@@ -29,7 +32,7 @@ export default function TawangGroup() {
     return price * passengers;
   };
 
-  // ⭐ FIXED — simplified handleChange
+  // FIXED — simplified handleChange
   const handleChange = (e) => {
     const { name, value } = e.target;
     const updatedData = { ...formData, [name]: value };
@@ -99,6 +102,25 @@ export default function TawangGroup() {
           history and tribal tradition. Authentic encounters, remote stays, and
           pristine mountain beauty make this a true cultural adventure.
         </p>
+
+        {/* ---------- NEW RESPONSIVE IMAGE GALLERY ---------- */}
+        <div className="flex flex-col md:flex-row justify-between gap-6 mb-12">
+          <img
+            src={Img1}
+            alt="Tawang view 1"
+            className="w-full md:w-1/3 h-48 object-cover rounded-lg shadow-md"
+          />
+          <img
+            src={Img2}
+            alt="Tawang view 2"
+            className="w-full md:w-1/3 h-48 object-cover rounded-lg shadow-md"
+          />
+          <img
+            src={Img3}
+            alt="Tawang view 3"
+            className="w-full md:w-1/3 h-48 object-cover rounded-lg shadow-md"
+          />
+        </div>
 
         <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
           Itinerary

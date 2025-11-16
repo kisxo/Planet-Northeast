@@ -21,7 +21,7 @@ const tours = [
     image: tawangGroup, // Replace with your image import
     duration: "6 Days | 5 Nights",
     groupSize: "Group Tour",
-    price: "From ₹13,999 /- Per Person",
+    price: "From ₹14,500 /- Per Person",
     link: "/tours/tawangGroup",
   },
   {
