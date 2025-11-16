@@ -1,6 +1,7 @@
 import Footer from "@/components/Footer";
 import Navbar from "../../components/Navbar";
 import { useEffect, useState } from "react";
+import Web3Form from "@/components/Web3Form";
 
 const DzukouValley = () => {
         useEffect(() => {
@@ -159,8 +160,8 @@ const DzukouValley = () => {
             Book Your Dzukou Valley Adventure
           </h2>
 
-          <form
-            onSubmit={handleSubmit}
+          <Web3Form title={"Trek"} name={"Dzukou Valley"}>
+          <div
             className="grid md:grid-cols-2 gap-8 text-gray-700"
           >
             <div>
@@ -277,7 +278,8 @@ const DzukouValley = () => {
                 Submit Booking
               </button>
             </div>
-          </form>
+          </div>
+          </Web3Form>
         </div>
       </section>
 

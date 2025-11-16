@@ -1,6 +1,7 @@
 import Footer from "@/components/Footer";
 import Navbar from "../../components/Navbar";
 import { useEffect, useState } from "react";
+import Web3Form from "@/components/Web3Form";
 
 const GlowLake = () => {
         useEffect(() => {
@@ -152,8 +153,8 @@ const GlowLake = () => {
             Book Your Glow Lake Adventure
           </h2>
 
-          <form
-            onSubmit={handleSubmit}
+<Web3Form title={"Trek"} name={"Glow Lake"}>
+          <div
             className="grid md:grid-cols-2 gap-8 text-gray-700"
           >
             <div>
@@ -274,7 +275,8 @@ const GlowLake = () => {
                 Submit Booking
               </button>
             </div>
-          </form>
+          </div>
+</Web3Form>
         </div>
       </section>
 
