@@ -1,3 +1,4 @@
+import Web3Form from "@/components/Web3Form";
 import { useEffect, useState } from "react";
 
 const BookingForm = () => {
@@ -67,10 +68,10 @@ const BookingForm = () => {
           Book Your Apatani Tribe Adventure
         </h2>
 
-        <form
-          onSubmit={handleSubmit}
+                  <Web3Form title={"Photography Tour"} name={"Apatani Tribe"}>
+        <div
           className="grid md:grid-cols-2 gap-8 text-gray-700"
-        >
+          >
           <div>
             <label className="block mb-2 font-medium">Full Name</label>
             <input
@@ -184,7 +185,9 @@ const BookingForm = () => {
               Submit Booking
             </button>
           </div>
-        </form>
+        </div>
+</Web3Form>
+
       </div>
     </section>
   );

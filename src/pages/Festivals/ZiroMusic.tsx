@@ -7,6 +7,7 @@ import ZiroImg from "@/assets/shillong.png";
 import ZiroCamp from "@/assets/majuli.png";
 import ZiroPackage from "@/assets/feature-adventure.jpg";
 import ZiroCulture from "@/assets/ziro.jpg";
+import Web3Form from "@/components/Web3Form";
 
 const ZiroMusic = () => {
   useEffect(() => {
@@ -226,8 +227,9 @@ const ZiroMusic = () => {
             Book Your Ziro Music Festival Trip
           </h2>
 
-          <form
-            onSubmit={handleSubmit}
+
+                    <Web3Form title={"Festival"} name={"Ziro Music"}>
+          <div
             className="grid md:grid-cols-2 gap-8 text-gray-700"
           >
             <div>
@@ -347,7 +349,9 @@ const ZiroMusic = () => {
                 Submit Booking
               </button>
             </div>
-          </form>
+          </div>
+</Web3Form>
+
         </div>
       </section>
 

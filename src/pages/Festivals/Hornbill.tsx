@@ -5,6 +5,7 @@ import Hornbillimg from "@/assets/Hornbill2.jpg";
 import Hornbillcamp from "@/assets/hornbillcamp.jpg";
 import HornbillPackage from "@/assets/Hornbillpack.jpg";
 import Hornbillcult from "@/assets/Hornbillculture.jpg";
+import Web3Form from "@/components/Web3Form";
 const Hornbill = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -257,8 +258,8 @@ const Hornbill = () => {
             Book Your Hornbill Festival Adventure
           </h2>
 
-          <form
-            onSubmit={handleSubmit}
+                    <Web3Form title={"Festival"} name={"Hornbill"}>
+          <div
             className="grid md:grid-cols-2 gap-8 text-gray-700"
           >
             <div>
@@ -394,7 +395,9 @@ const Hornbill = () => {
                 Submit Booking
               </button>
             </div>
-          </form>
+          </div>
+</Web3Form>
+
         </div>
       </section>
 

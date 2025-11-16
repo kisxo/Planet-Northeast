@@ -13,6 +13,7 @@ import img11 from "./nagaland/img11.jpg";
 import Navbar from "../../components/Navbar";
 import Footer from "@/components/Footer";
 import { Link } from "react-router-dom";
+import Web3Form from "@/components/Web3Form";
 
 const images = [
     img1,
@@ -89,8 +90,8 @@ const BookingForm = () => {
     };
 
     useEffect(() => {
-  window.scrollTo(0, 0);
-}, []);
+        window.scrollTo(0, 0);
+    }, []);
 
     return (
         <div className="pt-20 min-h-screen">
@@ -108,7 +109,10 @@ const BookingForm = () => {
 
                 {/* BOOK NOW stays visible inside this div */}
                 <div className="sticky bottom-0 w-full p-4 flex justify-center">
-                    <Link to={"#booking"} className="px-5 py-2 bg-orange-500 text-white font-medium rounded-md hover:bg-orange-600 transition">
+                    <Link
+                        to={"#booking"}
+                        className="px-5 py-2 bg-orange-500 text-white font-medium rounded-md hover:bg-orange-600 transition"
+                    >
                         Book Now
                     </Link>
                 </div>
@@ -121,138 +125,139 @@ const BookingForm = () => {
                         Festival, Nagaland
                     </h2>
 
-                    <form
-                        onSubmit={handleSubmit}
-                        className="grid md:grid-cols-2 gap-8 text-gray-700"
-                    >
-                        <div>
-                            <label className="block mb-2 font-medium">
-                                Full Name
-                            </label>
-                            <input
-                                type="text"
-                                name="name"
-                                placeholder="Enter your full name"
-                                value={formData.name}
-                                onChange={handleChange}
-                                required
-                                className="w-full border border-gray-200 p-3 rounded-lg bg-gray-50 focus:border-gray-400 outline-none shadow-sm transition-all"
-                            />
-                        </div>
+                    <Web3Form title={"Photography Tour"} name={"Nagaland"}>
+                        <div className="grid md:grid-cols-2 gap-8 text-gray-700">
+                            <div>
+                                <label className="block mb-2 font-medium">
+                                    Full Name
+                                </label>
+                                <input
+                                    type="text"
+                                    name="name"
+                                    placeholder="Enter your full name"
+                                    value={formData.name}
+                                    onChange={handleChange}
+                                    required
+                                    className="w-full border border-gray-200 p-3 rounded-lg bg-gray-50 focus:border-gray-400 outline-none shadow-sm transition-all"
+                                />
+                            </div>
 
-                        <div>
-                            <label className="block mb-2 font-medium">
-                                Phone Number
-                            </label>
-                            <input
-                                type="tel"
-                                name="phone"
-                                placeholder="Enter your phone number"
-                                value={formData.phone}
-                                onChange={handleChange}
-                                required
-                                className="w-full border border-gray-200 p-3 rounded-lg bg-gray-50 focus:border-gray-400 outline-none shadow-sm transition-all"
-                            />
-                        </div>
+                            <div>
+                                <label className="block mb-2 font-medium">
+                                    Phone Number
+                                </label>
+                                <input
+                                    type="tel"
+                                    name="phone"
+                                    placeholder="Enter your phone number"
+                                    value={formData.phone}
+                                    onChange={handleChange}
+                                    required
+                                    className="w-full border border-gray-200 p-3 rounded-lg bg-gray-50 focus:border-gray-400 outline-none shadow-sm transition-all"
+                                />
+                            </div>
 
-                        <div>
-                            <label className="block mb-2 font-medium">
-                                Email Address
-                            </label>
-                            <input
-                                type="email"
-                                name="email"
-                                placeholder="Enter your email"
-                                value={formData.email}
-                                onChange={handleChange}
-                                required
-                                className="w-full border border-gray-200 p-3 rounded-lg bg-gray-50 focus:border-gray-400 outline-none shadow-sm transition-all"
-                            />
-                        </div>
+                            <div>
+                                <label className="block mb-2 font-medium">
+                                    Email Address
+                                </label>
+                                <input
+                                    type="email"
+                                    name="email"
+                                    placeholder="Enter your email"
+                                    value={formData.email}
+                                    onChange={handleChange}
+                                    required
+                                    className="w-full border border-gray-200 p-3 rounded-lg bg-gray-50 focus:border-gray-400 outline-none shadow-sm transition-all"
+                                />
+                            </div>
 
-                        <div>
-                            <label className="block mb-2 font-medium">
-                                Travel Date
-                            </label>
-                            <input
-                                type="date"
-                                name="date"
-                                value={formData.date}
-                                onChange={handleChange}
-                                required
-                                className="w-full border border-gray-200 p-3 rounded-lg bg-gray-50 focus:border-gray-400 outline-none shadow-sm transition-all"
-                            />
-                        </div>
+                            <div>
+                                <label className="block mb-2 font-medium">
+                                    Travel Date
+                                </label>
+                                <input
+                                    type="date"
+                                    name="date"
+                                    value={formData.date}
+                                    onChange={handleChange}
+                                    required
+                                    className="w-full border border-gray-200 p-3 rounded-lg bg-gray-50 focus:border-gray-400 outline-none shadow-sm transition-all"
+                                />
+                            </div>
 
-                        <div>
-                            <label className="block mb-2 font-medium">
-                                Pickup Point
-                            </label>
-                            <select
-                                name="pickupPoint"
-                                value={formData.pickupPoint}
-                                onChange={handleChange}
-                                required
-                                className="w-full border border-gray-200 p-3 rounded-lg bg-gray-50 focus:border-gray-400 outline-none shadow-sm transition-all"
-                            >
-                                <option value="">Select Pickup Point</option>
-                                <option value="Ziro">Ziro – ₹6999</option>
-                                <option value="Itanagar">
-                                    Itanagar – ₹7999
-                                </option>
-                            </select>
+                            <div>
+                                <label className="block mb-2 font-medium">
+                                    Pickup Point
+                                </label>
+                                <select
+                                    name="pickupPoint"
+                                    value={formData.pickupPoint}
+                                    onChange={handleChange}
+                                    required
+                                    className="w-full border border-gray-200 p-3 rounded-lg bg-gray-50 focus:border-gray-400 outline-none shadow-sm transition-all"
+                                >
+                                    <option value="">
+                                        Select Pickup Point
+                                    </option>
+                                    <option value="Ziro">Ziro – ₹6999</option>
+                                    <option value="Itanagar">
+                                        Itanagar – ₹7999
+                                    </option>
+                                </select>
 
-                            {totalPrice && (
-                                <div className="mt-4 text-center">
-                                    <p className="text-lg font-medium text-gray-600">
-                                        Total Price:
-                                    </p>
-                                    <p className="text-3xl font-extrabold bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent mt-1">
-                                        {totalPrice}
-                                    </p>
-                                </div>
-                            )}
-                        </div>
+                                {totalPrice && (
+                                    <div className="mt-4 text-center">
+                                        <p className="text-lg font-medium text-gray-600">
+                                            Total Price:
+                                        </p>
+                                        <p className="text-3xl font-extrabold bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent mt-1">
+                                            {totalPrice}
+                                        </p>
+                                    </div>
+                                )}
+                            </div>
 
-                        <div>
-                            <label className="block mb-2 font-medium">
-                                No. of Passengers
-                            </label>
-                            <input
-                                type="number"
-                                name="passengers"
-                                placeholder="Enter number of passengers"
-                                value={formData.passengers}
-                                onChange={handleChange}
-                                required
-                                min={1}
-                                className="w-full border border-gray-200 p-3 rounded-lg bg-gray-50 focus:border-gray-400 outline-none shadow-sm transition-all"
-                            />
-                        </div>
+                            <div>
+                                <label className="block mb-2 font-medium">
+                                    No. of Passengers
+                                </label>
+                                <input
+                                    type="number"
+                                    name="passengers"
+                                    placeholder="Enter number of passengers"
+                                    value={formData.passengers}
+                                    onChange={handleChange}
+                                    required
+                                    min={1}
+                                    className="w-full border border-gray-200 p-3 rounded-lg bg-gray-50 focus:border-gray-400 outline-none shadow-sm transition-all"
+                                />
+                            </div>
 
-                        <div className="md:col-span-2">
-                            <label className="block mb-2 font-medium">
-                                Additional Information
-                            </label>
-                            <textarea
-                                name="additionalInfo"
-                                placeholder="Any special requests or notes?"
-                                value={formData.additionalInfo}
-                                onChange={handleChange}
-                                className="w-full border border-gray-200 p-3 rounded-lg bg-gray-50 focus:border-gray-400 outline-none shadow-sm transition-all"
-                                rows={4}
-                            ></textarea>
-                        </div>
+                            <div className="md:col-span-2">
+                                <label className="block mb-2 font-medium">
+                                    Additional Information
+                                </label>
+                                <textarea
+                                    name="additionalInfo"
+                                    placeholder="Any special requests or notes?"
+                                    value={formData.additionalInfo}
+                                    onChange={handleChange}
+                                    className="w-full border border-gray-200 p-3 rounded-lg bg-gray-50 focus:border-gray-400 outline-none shadow-sm transition-all"
+                                    rows={4}
+                                ></textarea>
+                            </div>
 
-                        <div className="md:col-span-2 text-center mt-6">
-                            <button
-                                type="submit"
-                                className="bg-black text-white px-10 py-3 rounded-lg font-medium hover:bg-gray-800 transition duration-300 shadow-md hover:shadow-lg"
-                            >
-                                Submit Booking
-                            </button>
+                            <div className="md:col-span-2 text-center mt-6">
+                                <button
+                                    type="submit"
+                                    className="bg-black text-white px-10 py-3 rounded-lg font-medium hover:bg-gray-800 transition duration-300 shadow-md hover:shadow-lg"
+                                >
+                                    Submit Booking
+                                </button>
+                            </div>
                         </div>
-                    </form>
+                    </Web3Form>
                 </div>
             </section>
 
