@@ -1,5 +1,6 @@
 import Navbar from "../../components/Navbar";
 import Footer from "@/components/Footer";
+import Web3Form from "@/components/Web3Form";
 import { useEffect, useState } from "react";
 
 export default function Tawang() {
@@ -167,8 +168,8 @@ export default function Tawang() {
             Book Your Tawang Adventure
           </h2>
 
-          <form
-            onSubmit={handleSubmit}
+<Web3Form title={"Tour"} name={"Tawang"}>
+          <div
             className="grid md:grid-cols-2 gap-8 text-gray-700"
           >
             {/* Full Name */}
@@ -313,7 +314,8 @@ export default function Tawang() {
                 Submit Booking
               </button>
             </div>
-          </form>
+          </div>
+</Web3Form>
         </div>
       </section>
 

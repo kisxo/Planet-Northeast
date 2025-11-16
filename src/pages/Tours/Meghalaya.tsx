@@ -1,6 +1,7 @@
 import Footer from "@/components/Footer";
 import Navbar from "../../components/Navbar";
 import { useEffect, useState } from "react";
+import Web3Form from "@/components/Web3Form";
 
 const Meghalaya = () => {
         useEffect(() => {
@@ -161,8 +162,8 @@ const Meghalaya = () => {
             Book Your Meghalaya Adventure
           </h2>
 
-          <form
-            onSubmit={handleSubmit}
+<Web3Form title={"Tour"} name={"Meghalaya"}>
+          <div
             className="grid md:grid-cols-2 gap-8 text-gray-700"
           >
             {/* Full Name */}
@@ -287,7 +288,8 @@ const Meghalaya = () => {
                 Submit Booking
               </button>
             </div>
-          </form>
+          </div>
+          </Web3Form>
         </div>
       </section>
 
