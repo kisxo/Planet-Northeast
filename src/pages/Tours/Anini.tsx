@@ -33,7 +33,7 @@ export default function Anini() {
     if (name === "pickupPoint") {
       switch (value) {
         case "Dibrugarh":
-          newBasePrice = 14500;
+          newBasePrice = 16499;
           break;
         default:
           newBasePrice = null;
@@ -84,7 +84,7 @@ export default function Anini() {
             <p className="text-lg md:text-2xl text-gray-200 leading-relaxed">
               From Dibrugarh — 6 Days / 5 Nights <br />
               <span className="text-yellow-400 font-semibold">
-                Price Starting from ₹14,500 /- Per Person
+                Price Starting from ₹16,499 /- Per Person
               </span>
             </p>
             <a
@@ -274,7 +274,7 @@ export default function Anini() {
                     {Number(formData.passengers) > 1 ? "s" : ""}:
                   </p>
                   <p className="text-3xl font-extrabold bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent drop-shadow-lg mt-1">
-                    ₹{(14499 * Number(formData.passengers)).toLocaleString()} /-
+                    ₹{(16499 * Number(formData.passengers)).toLocaleString()} /-
                   </p>
                 </div>
               )}
@@ -299,7 +299,7 @@ export default function Anini() {
                   type="submit"
                   className="bg-black text-white px-10 py-3 rounded-lg font-medium hover:bg-gray-800 transition duration-300 shadow-md hover:shadow-lg"
                 >
-                  Submit Booking
+                  Book Now
                 </button>
               </div>
             </div>

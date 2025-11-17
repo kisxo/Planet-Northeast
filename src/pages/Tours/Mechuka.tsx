@@ -2,12 +2,13 @@ import Navbar from "../../components/Navbar";
 import Footer from "@/components/Footer";
 import Web3Form from "@/components/Web3Form";
 import { useEffect, useState } from "react";
-import MachukaHeroImg from "@/assets/MachukaBG.png";
+import MachukaHeroImg from "@/assets/MachukaBG.jpg";
 
 export default function Mechuka() {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
@@ -28,12 +29,13 @@ export default function Mechuka() {
     const updatedData = { ...formData, [name]: value };
     setFormData(updatedData);
 
-    // Update base price dynamically based on pickup point
     let newBasePrice = basePrice;
+
+    // Update base price based on pickup point
     if (name === "pickupPoint") {
       switch (value) {
         case "Dibrugarh":
-          newBasePrice = 18500; // <--update this value later
+          newBasePrice = 16499;
           break;
         default:
           newBasePrice = null;
@@ -41,22 +43,21 @@ export default function Mechuka() {
       setBasePrice(newBasePrice);
     }
 
-    // Calculate total price dynamically
-    if (name === "passengers" || name === "pickupPoint") {
-      const passengers =
-        name === "passengers" ? Number(value) : Number(updatedData.passengers);
-      const effectiveBase = name === "pickupPoint" ? newBasePrice : basePrice;
+    // Calculate total price
+    const passengers =
+      name === "passengers" ? Number(value) : Number(updatedData.passengers);
 
-      if (effectiveBase && passengers > 0) {
-        const total = effectiveBase * passengers;
-        setTotalPrice(
-          `₹${total.toLocaleString()} /- Total (${passengers} Person${
-            passengers > 1 ? "s" : ""
-          })`
-        );
-      } else {
-        setTotalPrice(null);
-      }
+    const effectiveBase = name === "pickupPoint" ? newBasePrice : basePrice;
+
+    if (effectiveBase && passengers > 0) {
+      const total = effectiveBase * passengers;
+      setTotalPrice(
+        `₹${total.toLocaleString()} /- Total (${passengers} Person${
+          passengers > 1 ? "s" : ""
+        })`
+      );
+    } else {
+      setTotalPrice(null);
     }
   };
 
@@ -84,7 +85,7 @@ export default function Mechuka() {
             <p className="text-lg md:text-2xl text-gray-200 leading-relaxed">
               From Dibrugarh — 6 Days / 5 Nights <br />
               <span className="text-yellow-400 font-semibold">
-                Price Starting from {basePrice} /- Per Person
+                Price Starting from 16,499 /- Per Person
               </span>
             </p>
             <a
@@ -119,6 +120,7 @@ export default function Mechuka() {
           reflects the belief that the region’s springs and climate have
           restorative qualities.
         </p>
+
         <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
           Mechuka Valley Tour Itinerary
         </h2>

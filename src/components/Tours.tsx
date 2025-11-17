@@ -13,7 +13,7 @@ const tours = [
     image: tawangRoad, // Replace with your image import
     duration: "5 Days | 4 Nights",
     groupSize: "Private Tour",
-    price: "From ₹18,599 /- Per Person",
+    price: "From ₹18,499 /- Per Person",
     link: "/tours/tawang",
   },
   {
@@ -21,7 +21,7 @@ const tours = [
     image: tawangGroup, // Replace with your image import
     duration: "6 Days | 5 Nights",
     groupSize: "Group Tour",
-    price: "From ₹14,500 /- Per Person",
+    price: "From ₹14,499 /- Per Person",
     link: "/tours/tawangGroup",
   },
   {
@@ -29,7 +29,7 @@ const tours = [
     image: Anini, // Replace with your image import
     duration: "6 Days | 5 Nights",
     groupSize: "Private / Group Tour",
-    price: "From ₹14,500 /- Per Person",
+    price: "From ₹16,499 /- Per Person",
     link: "/tours/anini",
   },
   {
@@ -37,7 +37,7 @@ const tours = [
     image: Machuka, // Replace with your image import
     duration: "6 Days | 5 Nights",
     groupSize: "Private / Group Tour",
-    price: "From ₹14,500 /- Per Person",
+    price: "From ₹16,499 /- Per Person",
     link: "/tours/mechuka",
   },
   {
@@ -45,7 +45,7 @@ const tours = [
     image: Meghalaya, // Replace with your image import
     duration: "5 Days | 4 Nights",
     groupSize: "Private / Group Tour",
-    price: "From ₹9,999/- Per Person",
+    price: "From ₹12,499/- Per Person",
     link: "/tours/meghalaya",
   },
 ];
@@ -94,7 +94,7 @@ const Tours = () => {
                 <div className="flex items-center justify-between">
                   <span className="text-lg font-semibold">{tour.price}</span>
                   <Link to={tour.link} className="border rounded-sm p-2">
-                    Book Now
+                    See More
                   </Link>
                 </div>
               </div>

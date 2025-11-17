@@ -2,7 +2,7 @@ import Footer from "@/components/Footer";
 import Navbar from "../../components/Navbar";
 import { useEffect, useState } from "react";
 import Web3Form from "@/components/Web3Form";
-import MeghayalayaHeroimg from "@/assets/meghalayaBg.png";
+import MeghayalayaHeroimg from "@/assets/meghalayaBg.jpg";
 const Meghalaya = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -32,7 +32,7 @@ const Meghalaya = () => {
     if (name === "pickupPoint") {
       switch (value) {
         case "Guwahati":
-          newBasePrice = 14500; // <-- update later if needed
+          newBasePrice = 12499; // <-- update later if needed
           break;
         default:
           newBasePrice = null;
@@ -83,8 +83,7 @@ const Meghalaya = () => {
             <p className="text-lg md:text-2xl text-gray-200 leading-relaxed">
               From Guwahati — 5 Days / 4 Nights <br />
               <span className="text-yellow-400 font-semibold">
-                Price Starting from {basePrice ? `₹${basePrice}` : "—"} /- Per
-                Person
+                Price Starting from 12,499 /- Per Person
               </span>
             </p>
             <a
