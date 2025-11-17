@@ -5,7 +5,7 @@ import ziro from "@/assets/ziro.jpg";
 import Hornbill from "@/assets/hornbill.jpg";
 const festivals = [
   {
-    title: "Ziro Music Festival",
+    title: "Ziro Festival of Music",
     image: ziro,
     duration: "5 Days | 4 Nights",
     groupSize: "Open Festival",
@@ -72,7 +72,7 @@ const Festivals = () => {
                     {festival.price}
                   </span>
                   <Link to={festival.link} className="border rounded-sm p-2">
-                    Book Now
+                    See More
                   </Link>
                 </div>
               </div>
