@@ -2,11 +2,13 @@ import Footer from "@/components/Footer";
 import Navbar from "../../components/Navbar";
 import { useEffect, useState } from "react";
 import Web3Form from "@/components/Web3Form";
+import DzokuHero from "@/assets/Dzokuhero.jpg";
 
 const DzukouValley = () => {
-        useEffect(() => {
-      window.scrollTo(0, 0);
-    }, []);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
@@ -26,17 +28,18 @@ const DzukouValley = () => {
     setFormData(updatedData);
 
     let newBasePrice = basePrice;
+
     if (name === "pickupPoint") {
       switch (value) {
-        case "Guwahati":
-          newBasePrice = 6799;
-          break;
+        // case "Guwahati":
+        //   newBasePrice = 6799;
+        //   break;
         case "Dimapur":
-          newBasePrice = 5999;
+          newBasePrice = 5499;
           break;
-        case "Kohima":
-          newBasePrice = 5399;
-          break;
+        // case "Kohima":
+        //   newBasePrice = 5399;
+        //   break;
         default:
           newBasePrice = null;
       }
@@ -73,7 +76,7 @@ const DzukouValley = () => {
       {/* ---------- HERO SECTION ---------- */}
       <section className="relative h-[70vh] w-full overflow-hidden">
         <img
-          src="/images/dzukou-valley.jpg"
+          src={DzokuHero}
           alt="Dzukou Valley"
           className="w-full h-full object-cover"
         />
@@ -84,8 +87,8 @@ const DzukouValley = () => {
             </h1>
             <p className="text-lg md:text-2xl text-gray-200 leading-relaxed">
               Starting from{" "}
-              <span className="text-yellow-400 font-semibold">₹5399/-</span> per
-              person
+              <span className="text-yellow-400 font-semibold">₹5,499/-</span>{" "}
+              per person
             </p>
             <a
               href="#booking"
@@ -99,6 +102,22 @@ const DzukouValley = () => {
 
       {/* ---------- TOUR OVERVIEW ---------- */}
       <section className="max-w-5xl mx-auto px-6 py-16 border-b border-gray-200">
+        <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
+          Overview
+        </h2>
+        <p className="text-gray-600 mb-8 font-medium">
+          Embark on a 3-day adventure through Nagaland’s stunning landscapes,
+          starting with a scenic drive from Dimapur to Jakhama, where you’ll
+          enjoy a traditional Naga lunch, a guided village walk, and a detailed
+          trek briefing. The journey continues with a short drive to the Dzukou
+          trailhead, followed by a rewarding 4–5 hour trek through lush forests
+          and rolling meadows to reach the iconic Dzukou Valley, where you can
+          soak in a breathtaking sunset and unwind by a campfire. On the final
+          day, witness a serene sunrise over the valley, enjoy breakfast, trek
+          back to Jakhama, and drive onward to Dimapur, with an optional visit
+          to Kohima to complete the experience.
+        </p>
+
         <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
           Dzukou Valley – 3 Days / 2 Nights
         </h2>
@@ -133,7 +152,7 @@ const DzukouValley = () => {
             <ul className="space-y-2 text-gray-700">
               <li>✅ Transfers from selected pickup point</li>
               <li>✅ 1N Jakhama + 1N Dzukou stay</li>
-              <li>✅ Local guide & Inner Line Permit (ILP)</li>
+              <li>✅ Local guide</li>
               <li>✅ 2 lunches + energy boosters</li>
               <li>✅ Campfire experience (weather permitting)</li>
             </ul>
@@ -161,124 +180,136 @@ const DzukouValley = () => {
           </h2>
 
           <Web3Form title={"Trek"} name={"Dzukou Valley"}>
-          <div
-            className="grid md:grid-cols-2 gap-8 text-gray-700"
-          >
-            <div>
-              <label className="block mb-2 font-medium">Full Name</label>
-              <input
-                type="text"
-                name="name"
-                placeholder="Enter your full name"
-                value={formData.name}
-                onChange={handleChange}
-                required
-                className="w-full border border-gray-200 p-3 rounded-lg bg-gray-50 focus:border-gray-400 outline-none shadow-sm transition-all"
-              />
-            </div>
+            <div className="grid md:grid-cols-2 gap-8 text-gray-700">
+              <div>
+                <label className="block mb-2 font-medium">Full Name</label>
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Enter your full name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  required
+                  className="w-full border border-gray-200 p-3 rounded-lg bg-gray-50 focus:border-gray-400 outline-none shadow-sm transition-all"
+                />
+              </div>
 
-            <div>
-              <label className="block mb-2 font-medium">Phone Number</label>
-              <input
-                type="tel"
-                name="phone"
-                placeholder="Enter your phone number"
-                value={formData.phone}
-                onChange={handleChange}
-                required
-                className="w-full border border-gray-200 p-3 rounded-lg bg-gray-50 focus:border-gray-400 outline-none shadow-sm transition-all"
-              />
-            </div>
+              <div>
+                <label className="block mb-2 font-medium">Phone Number</label>
+                <input
+                  type="tel"
+                  name="phone"
+                  placeholder="Enter your phone number"
+                  value={formData.phone}
+                  onChange={handleChange}
+                  required
+                  className="w-full border border-gray-200 p-3 rounded-lg bg-gray-50 focus:border-gray-400 outline-none shadow-sm transition-all"
+                />
+              </div>
 
-            <div>
-              <label className="block mb-2 font-medium">Email Address</label>
-              <input
-                type="email"
-                name="email"
-                placeholder="Enter your email"
-                value={formData.email}
-                onChange={handleChange}
-                required
-                className="w-full border border-gray-200 p-3 rounded-lg bg-gray-50 focus:border-gray-400 outline-none shadow-sm transition-all"
-              />
-            </div>
+              <div>
+                <label className="block mb-2 font-medium">Email Address</label>
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="Enter your email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
+                  className="w-full border border-gray-200 p-3 rounded-lg bg-gray-50 focus:border-gray-400 outline-none shadow-sm transition-all"
+                />
+              </div>
 
-            <div>
-              <label className="block mb-2 font-medium">Travel Date</label>
-              <input
-                type="date"
-                name="date"
-                value={formData.date}
-                onChange={handleChange}
-                required
-                className="w-full border border-gray-200 p-3 rounded-lg bg-gray-50 focus:border-gray-400 outline-none shadow-sm transition-all"
-              />
-            </div>
+              <div>
+                <label className="block mb-2 font-medium">Travel Date</label>
+                <input
+                  type="date"
+                  name="date"
+                  value={formData.date}
+                  onChange={handleChange}
+                  required
+                  className="w-full border border-gray-200 p-3 rounded-lg bg-gray-50 focus:border-gray-400 outline-none shadow-sm transition-all"
+                />
+              </div>
 
-            <div>
-              <label className="block mb-2 font-medium">Pickup Point</label>
-              <select
-                name="pickupPoint"
-                value={formData.pickupPoint}
-                onChange={handleChange}
-                required
-                className="w-full border border-gray-200 p-3 rounded-lg bg-gray-50 focus:border-gray-400 outline-none shadow-sm transition-all"
-              >
-                <option value="">Select Pickup Point</option>
-                <option value="Guwahati">Guwahati – ₹6799</option>
-                <option value="Dimapur">Dimapur – ₹5999</option>
-                <option value="Kohima">Kohima – ₹5399</option>
-              </select>
+              <div>
+                <label className="block mb-2 font-medium">Pickup Point</label>
+                <select
+                  name="pickupPoint"
+                  value={formData.pickupPoint}
+                  onChange={handleChange}
+                  required
+                  className="w-full border border-gray-200 p-3 rounded-lg bg-gray-50 focus:border-gray-400 outline-none shadow-sm transition-all"
+                >
+                  <option value="">Select Pickup Point</option>
 
-              {totalPrice && (
-                <div className="mt-4 text-center">
+                  <option value="Dimapur">Dimapur – ₹5,499</option>
+                </select>
+
+                {totalPrice && (
+                  <div className="mt-4 text-center">
+                    <p className="text-lg font-medium text-gray-600">
+                      Total Price:
+                    </p>
+                    <p className="text-3xl font-extrabold bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent mt-1">
+                      {totalPrice}
+                    </p>
+                  </div>
+                )}
+              </div>
+
+              <div>
+                <label className="block mb-2 font-medium">
+                  No. of Passengers
+                </label>
+                <input
+                  type="number"
+                  name="passengers"
+                  placeholder="Enter number of passengers"
+                  value={formData.passengers}
+                  onChange={handleChange}
+                  required
+                  className="w-full border border-gray-200 p-3 rounded-lg bg-gray-50 focus:border-gray-400 outline-none shadow-sm transition-all [appearance:textfield] [&::-webkit-inner-spin-button]:appearance-none"
+                />
+              </div>
+
+              {/* UPDATED PRICE DISPLAY */}
+              {formData.passengers && basePrice && (
+                <div className="md:col-span-2 text-center mt-4 animate-fadeIn">
                   <p className="text-lg font-medium text-gray-600">
-                    Total Price:
+                    Total Price for {formData.passengers} Passenger
+                    {Number(formData.passengers) > 1 ? "s" : ""}:
                   </p>
-                  <p className="text-3xl font-extrabold bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent mt-1">
-                    {totalPrice}
+                  <p className="text-3xl font-extrabold bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent drop-shadow-lg mt-1">
+                    ₹
+                    {(basePrice * Number(formData.passengers)).toLocaleString()}{" "}
+                    /-
                   </p>
                 </div>
               )}
-            </div>
 
-            <div>
-              <label className="block mb-2 font-medium">
-                No. of Passengers
-              </label>
-              <input
-                type="number"
-                name="passengers"
-                placeholder="Enter number of passengers"
-                value={formData.passengers}
-                onChange={handleChange}
-                required
-                className="w-full border border-gray-200 p-3 rounded-lg bg-gray-50 focus:border-gray-400 outline-none shadow-sm transition-all [appearance:textfield] [&::-webkit-inner-spin-button]:appearance-none"
-              />
-            </div>
+              <div className="md:col-span-2">
+                <label className="block mb-2 font-medium">
+                  Additional Information
+                </label>
+                <textarea
+                  name="additionalInfo"
+                  placeholder="Any special requests or notes?"
+                  value={formData.additionalInfo}
+                  onChange={handleChange}
+                  className="w-full border border-gray-200 p-3 rounded-lg bg-gray-50 focus:border-gray-400 outline-none shadow-sm transition-all"
+                ></textarea>
+              </div>
 
-            <div className="md:col-span-2">
-              <label className="block mb-2 font-medium">
-                Additional Information
-              </label>
-              <textarea
-                name="additionalInfo"
-                placeholder="Any special requests or notes?"
-                value={formData.additionalInfo}
-                onChange={handleChange}
-                className="w-full border border-gray-200 p-3 rounded-lg bg-gray-50 focus:border-gray-400 outline-none shadow-sm transition-all"
-              ></textarea>
+              <div className="md:col-span-2 text-center mt-6">
+                <button
+                  type="submit"
+                  className="bg-black text-white px-10 py-3 rounded-lg font-medium hover:bg-gray-800 transition duration-300 shadow-md hover:shadow-lg"
+                >
+                  Submit Booking
+                </button>
+              </div>
             </div>
-
-            <div className="md:col-span-2 text-center mt-6">
-              <button
-                type="submit"
-                className="bg-black text-white px-10 py-3 rounded-lg font-medium hover:bg-gray-800 transition duration-300 shadow-md hover:shadow-lg"
-              >
-                Submit Booking
-              </button>
-            </div>
-          </div>
           </Web3Form>
         </div>
       </section>

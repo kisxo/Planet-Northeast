@@ -13,7 +13,7 @@ const treks = [
     link: "/treks/dzukou-valley",
   },
   {
-    title: "Glow Lake Trek",
+    title: "Glaw Lake Trek",
     image: glow,
     duration: "3 Days | 2 Nights",
     groupSize: "Private / Group Tour",
@@ -44,7 +44,10 @@ const Treks = () => {
               className="bg-card rounded-2xl overflow-hidden shadow-soft hover:shadow-hover transition-all duration-300 group cursor-pointer"
             >
               <div className="relative overflow-hidden aspect-[4/3]">
-                <img onClick={()=>{navigate(trek.link);}}
+                <img
+                  onClick={() => {
+                    navigate(trek.link);
+                  }}
                   src={trek.image}
                   alt={trek.title}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
