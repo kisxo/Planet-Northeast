@@ -2,11 +2,12 @@ import Navbar from "../../components/Navbar";
 import Footer from "@/components/Footer";
 import Web3Form from "@/components/Web3Form";
 import { useEffect, useState } from "react";
+import MachukaHeroImg from "@/assets/MachukaBG.png";
 
 export default function Mechuka() {
-        useEffect(() => {
-      window.scrollTo(0, 0);
-    }, []);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
@@ -71,7 +72,7 @@ export default function Mechuka() {
       {/* ---------- HERO SECTION ---------- */}
       <section className="relative h-[75vh] w-full overflow-hidden">
         <img
-          src="https://s7ap1.scene7.com/is/image/incredibleindia/1-samten-yongcha-monastery-mechuka-arunachal-pradesh-attr-hero"
+          src={MachukaHeroImg}
           alt="Mechuka Tour"
           className="w-full h-full object-cover"
         />
@@ -98,6 +99,26 @@ export default function Mechuka() {
 
       {/* ---------- TOUR OVERVIEW ---------- */}
       <section className="max-w-5xl mx-auto px-6 py-16 border-b border-gray-200">
+        <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
+          Overview
+        </h2>
+        <p className="text-gray-500 mb-8 font-medium">
+          Menchukha (also spelled Mechuka), located in Arunachal Pradesh’s
+          Shi-Yomi district, is a high-altitude valley known for its stark
+          landscapes, mixed tribal culture, and proximity to the Indo–Tibet
+          border. The valley combines grass-covered hills, a winding river, and
+          snow-lined peaks—making it one of the more visually distinctive
+          destinations in the Northeast. A tour here typically focuses on scenic
+          travel through the valley, village visits, local festivals, short
+          hikes, and monastery exploration. Because the region is remote, the
+          experience is less commercial and more oriented toward raw landscape
+          and local culture. Meaning of Menchukha The name Menchukha comes from
+          three Tibetan words: 'Men' means medicine, 'Chu' means water, 'Kha'
+          means snow - Combined, it’s commonly interpreted as “the medicinal
+          water of snow” or “a valley blessed with healing snow-water.” This
+          reflects the belief that the region’s springs and climate have
+          restorative qualities.
+        </p>
         <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
           Mechuka Valley Tour Itinerary
         </h2>
@@ -163,132 +184,130 @@ export default function Mechuka() {
           </h2>
 
           <Web3Form title={"Tour"} name={"Mechuka"}>
-          <div
-            className="grid md:grid-cols-2 gap-8 text-gray-700"
-          >
-            {/* Full Name */}
-            <div>
-              <label className="block mb-2 font-medium">Full Name</label>
-              <input
-                type="text"
-                name="name"
-                placeholder="Enter your full name"
-                value={formData.name}
-                onChange={handleChange}
-                required
-                className="w-full border border-gray-200 p-3 rounded-lg bg-gray-50 focus:border-gray-400 focus:ring-0 outline-none shadow-sm transition-all"
-              />
-            </div>
+            <div className="grid md:grid-cols-2 gap-8 text-gray-700">
+              {/* Full Name */}
+              <div>
+                <label className="block mb-2 font-medium">Full Name</label>
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Enter your full name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  required
+                  className="w-full border border-gray-200 p-3 rounded-lg bg-gray-50 focus:border-gray-400 focus:ring-0 outline-none shadow-sm transition-all"
+                />
+              </div>
 
-            {/* Phone Number */}
-            <div>
-              <label className="block mb-2 font-medium">Phone Number</label>
-              <input
-                type="tel"
-                name="phone"
-                placeholder="Enter your phone number"
-                value={formData.phone}
-                onChange={handleChange}
-                required
-                className="w-full border border-gray-200 p-3 rounded-lg bg-gray-50 focus:border-gray-400 focus:ring-0 outline-none shadow-sm transition-all"
-              />
-            </div>
+              {/* Phone Number */}
+              <div>
+                <label className="block mb-2 font-medium">Phone Number</label>
+                <input
+                  type="tel"
+                  name="phone"
+                  placeholder="Enter your phone number"
+                  value={formData.phone}
+                  onChange={handleChange}
+                  required
+                  className="w-full border border-gray-200 p-3 rounded-lg bg-gray-50 focus:border-gray-400 focus:ring-0 outline-none shadow-sm transition-all"
+                />
+              </div>
 
-            {/* Email */}
-            <div>
-              <label className="block mb-2 font-medium">Email Address</label>
-              <input
-                type="email"
-                name="email"
-                placeholder="Enter your email"
-                value={formData.email}
-                onChange={handleChange}
-                required
-                className="w-full border border-gray-200 p-3 rounded-lg bg-gray-50 focus:border-gray-400 focus:ring-0 outline-none shadow-sm transition-all"
-              />
-            </div>
+              {/* Email */}
+              <div>
+                <label className="block mb-2 font-medium">Email Address</label>
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="Enter your email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
+                  className="w-full border border-gray-200 p-3 rounded-lg bg-gray-50 focus:border-gray-400 focus:ring-0 outline-none shadow-sm transition-all"
+                />
+              </div>
 
-            {/* Date */}
-            <div>
-              <label className="block mb-2 font-medium">
-                Preferred Travel Date
-              </label>
-              <input
-                type="date"
-                name="date"
-                value={formData.date}
-                onChange={handleChange}
-                required
-                className="w-full border border-gray-200 p-3 rounded-lg bg-gray-50 focus:border-gray-400 focus:ring-0 outline-none shadow-sm transition-all"
-              />
-            </div>
+              {/* Date */}
+              <div>
+                <label className="block mb-2 font-medium">
+                  Preferred Travel Date
+                </label>
+                <input
+                  type="date"
+                  name="date"
+                  value={formData.date}
+                  onChange={handleChange}
+                  required
+                  className="w-full border border-gray-200 p-3 rounded-lg bg-gray-50 focus:border-gray-400 focus:ring-0 outline-none shadow-sm transition-all"
+                />
+              </div>
 
-            {/* Pickup Point */}
-            <div>
-              <label className="block mb-2 font-medium">Pickup Point</label>
-              <select
-                name="pickupPoint"
-                value={formData.pickupPoint}
-                onChange={handleChange}
-                required
-                className="w-full border border-gray-200 p-3 rounded-lg bg-gray-50 focus:border-gray-400 focus:ring-0 outline-none shadow-sm transition-all"
-              >
-                <option value="">Select Pickup Point</option>
-                <option value="Dibrugarh">Dibrugarh</option>
-              </select>
+              {/* Pickup Point */}
+              <div>
+                <label className="block mb-2 font-medium">Pickup Point</label>
+                <select
+                  name="pickupPoint"
+                  value={formData.pickupPoint}
+                  onChange={handleChange}
+                  required
+                  className="w-full border border-gray-200 p-3 rounded-lg bg-gray-50 focus:border-gray-400 focus:ring-0 outline-none shadow-sm transition-all"
+                >
+                  <option value="">Select Pickup Point</option>
+                  <option value="Dibrugarh">Dibrugarh</option>
+                </select>
 
-              {totalPrice && (
-                <div className="mt-4 text-center animate-fadeIn">
-                  <p className="text-lg font-medium text-gray-600">
-                    Total Price:
-                  </p>
-                  <p className="text-3xl font-extrabold bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent drop-shadow-lg mt-1">
-                    {totalPrice}
-                  </p>
-                </div>
-              )}
-            </div>
+                {totalPrice && (
+                  <div className="mt-4 text-center animate-fadeIn">
+                    <p className="text-lg font-medium text-gray-600">
+                      Total Price:
+                    </p>
+                    <p className="text-3xl font-extrabold bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent drop-shadow-lg mt-1">
+                      {totalPrice}
+                    </p>
+                  </div>
+                )}
+              </div>
 
-            {/* Number of Passengers */}
-            <div>
-              <label className="block mb-2 font-medium">
-                Number of Passengers
-              </label>
-              <input
-                type="number"
-                name="passengers"
-                placeholder="Enter number of passengers"
-                value={formData.passengers}
-                onChange={handleChange}
-                required
-                className="w-full border border-gray-200 p-3 rounded-lg bg-gray-50 focus:border-gray-400 focus:ring-0 outline-none shadow-sm transition-all [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
-              />
-            </div>
+              {/* Number of Passengers */}
+              <div>
+                <label className="block mb-2 font-medium">
+                  Number of Passengers
+                </label>
+                <input
+                  type="number"
+                  name="passengers"
+                  placeholder="Enter number of passengers"
+                  value={formData.passengers}
+                  onChange={handleChange}
+                  required
+                  className="w-full border border-gray-200 p-3 rounded-lg bg-gray-50 focus:border-gray-400 focus:ring-0 outline-none shadow-sm transition-all [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+                />
+              </div>
 
-            {/* Additional Info */}
-            <div className="md:col-span-2">
-              <label className="block mb-2 font-medium">
-                Additional Information
-              </label>
-              <textarea
-                name="additionalInfo"
-                placeholder="Any special requests or notes?"
-                value={formData.additionalInfo}
-                onChange={handleChange}
-                className="w-full border border-gray-200 p-3 rounded-lg bg-gray-50 focus:border-gray-400 focus:ring-0 outline-none shadow-sm transition-all"
-              ></textarea>
-            </div>
+              {/* Additional Info */}
+              <div className="md:col-span-2">
+                <label className="block mb-2 font-medium">
+                  Additional Information
+                </label>
+                <textarea
+                  name="additionalInfo"
+                  placeholder="Any special requests or notes?"
+                  value={formData.additionalInfo}
+                  onChange={handleChange}
+                  className="w-full border border-gray-200 p-3 rounded-lg bg-gray-50 focus:border-gray-400 focus:ring-0 outline-none shadow-sm transition-all"
+                ></textarea>
+              </div>
 
-            {/* Submit Button */}
-            <div className="md:col-span-2 text-center mt-6">
-              <button
-                type="submit"
-                className="bg-black text-white px-10 py-3 rounded-lg font-medium hover:bg-gray-800 transition duration-300 shadow-md hover:shadow-lg"
-              >
-                Submit Booking
-              </button>
+              {/* Submit Button */}
+              <div className="md:col-span-2 text-center mt-6">
+                <button
+                  type="submit"
+                  className="bg-black text-white px-10 py-3 rounded-lg font-medium hover:bg-gray-800 transition duration-300 shadow-md hover:shadow-lg"
+                >
+                  Submit Booking
+                </button>
+              </div>
             </div>
-          </div>
           </Web3Form>
         </div>
       </section>

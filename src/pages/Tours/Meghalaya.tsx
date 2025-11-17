@@ -2,11 +2,11 @@ import Footer from "@/components/Footer";
 import Navbar from "../../components/Navbar";
 import { useEffect, useState } from "react";
 import Web3Form from "@/components/Web3Form";
-
+import MeghayalayaHeroimg from "@/assets/meghalayaBg.png";
 const Meghalaya = () => {
-        useEffect(() => {
-      window.scrollTo(0, 0);
-    }, []);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
@@ -71,7 +71,7 @@ const Meghalaya = () => {
       {/* ---------- HERO SECTION ---------- */}
       <section className="relative h-[75vh] w-full overflow-hidden">
         <img
-          src="https://media1.thrillophilia.com/filestore/nwamxdepttr4a1wa4fm2hesk5jml_Untitled%20design%20(1).jpg"
+          src={MeghayalayaHeroimg}
           alt="Meghalaya Tour"
           className="w-full h-full object-cover"
         />
@@ -99,6 +99,23 @@ const Meghalaya = () => {
 
       {/* ---------- TOUR OVERVIEW ---------- */}
       <section className="max-w-5xl mx-auto px-6 py-16 border-b border-gray-200">
+        <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
+          Overview
+        </h2>
+        <p className="text-gray-500 mb-8 font-medium">
+          Your 5-day Meghalaya trip starts in Guwahati and moves to Shillong,
+          where you explore Umiam Lake, Ward’s Lake, Don Bosco Museum, and the
+          bustling Police Bazaar. From there, you travel to Cherrapunji to
+          experience major attractions like Nohkalikai Falls, caves, valleys,
+          and the Mawphlang Sacred Grove. You spend a full day in Cherrapunji
+          trekking to the Double Decker Living Root Bridge and visiting nearby
+          waterfalls and nature trails. Next, you head to Dawki and Shnongpdeng
+          for the crystal-clear Umngot River, the Indo-Bangladesh border, and
+          Mawlynnong Village, with an option for a bamboo trek. The journey
+          concludes with a scenic return to Guwahati via Jowai, stopping at the
+          stunning Krang Suri and Phe Phe Waterfalls before departure.
+        </p>
+
         <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
           Meghalaya Tour Itinerary
         </h2>
@@ -162,133 +179,131 @@ const Meghalaya = () => {
             Book Your Meghalaya Adventure
           </h2>
 
-<Web3Form title={"Tour"} name={"Meghalaya"}>
-          <div
-            className="grid md:grid-cols-2 gap-8 text-gray-700"
-          >
-            {/* Full Name */}
-            <div>
-              <label className="block mb-2 font-medium">Full Name</label>
-              <input
-                type="text"
-                name="name"
-                placeholder="Enter your full name"
-                value={formData.name}
-                onChange={handleChange}
-                required
-                className="w-full border border-gray-200 p-3 rounded-lg bg-gray-50 focus:border-gray-400 outline-none shadow-sm transition-all"
-              />
-            </div>
+          <Web3Form title={"Tour"} name={"Meghalaya"}>
+            <div className="grid md:grid-cols-2 gap-8 text-gray-700">
+              {/* Full Name */}
+              <div>
+                <label className="block mb-2 font-medium">Full Name</label>
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Enter your full name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  required
+                  className="w-full border border-gray-200 p-3 rounded-lg bg-gray-50 focus:border-gray-400 outline-none shadow-sm transition-all"
+                />
+              </div>
 
-            {/* Phone Number */}
-            <div>
-              <label className="block mb-2 font-medium">Phone Number</label>
-              <input
-                type="tel"
-                name="phone"
-                placeholder="Enter your phone number"
-                value={formData.phone}
-                onChange={handleChange}
-                required
-                className="w-full border border-gray-200 p-3 rounded-lg bg-gray-50 focus:border-gray-400 outline-none shadow-sm transition-all"
-              />
-            </div>
+              {/* Phone Number */}
+              <div>
+                <label className="block mb-2 font-medium">Phone Number</label>
+                <input
+                  type="tel"
+                  name="phone"
+                  placeholder="Enter your phone number"
+                  value={formData.phone}
+                  onChange={handleChange}
+                  required
+                  className="w-full border border-gray-200 p-3 rounded-lg bg-gray-50 focus:border-gray-400 outline-none shadow-sm transition-all"
+                />
+              </div>
 
-            {/* Email */}
-            <div>
-              <label className="block mb-2 font-medium">Email Address</label>
-              <input
-                type="email"
-                name="email"
-                placeholder="Enter your email"
-                value={formData.email}
-                onChange={handleChange}
-                required
-                className="w-full border border-gray-200 p-3 rounded-lg bg-gray-50 focus:border-gray-400 outline-none shadow-sm transition-all"
-              />
-            </div>
+              {/* Email */}
+              <div>
+                <label className="block mb-2 font-medium">Email Address</label>
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="Enter your email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
+                  className="w-full border border-gray-200 p-3 rounded-lg bg-gray-50 focus:border-gray-400 outline-none shadow-sm transition-all"
+                />
+              </div>
 
-            {/* Date */}
-            <div>
-              <label className="block mb-2 font-medium">
-                Preferred Travel Date
-              </label>
-              <input
-                type="date"
-                name="date"
-                value={formData.date}
-                onChange={handleChange}
-                required
-                className="w-full border border-gray-200 p-3 rounded-lg bg-gray-50 focus:border-gray-400 outline-none shadow-sm transition-all"
-              />
-            </div>
+              {/* Date */}
+              <div>
+                <label className="block mb-2 font-medium">
+                  Preferred Travel Date
+                </label>
+                <input
+                  type="date"
+                  name="date"
+                  value={formData.date}
+                  onChange={handleChange}
+                  required
+                  className="w-full border border-gray-200 p-3 rounded-lg bg-gray-50 focus:border-gray-400 outline-none shadow-sm transition-all"
+                />
+              </div>
 
-            {/* Pickup Point */}
-            <div>
-              <label className="block mb-2 font-medium">Pickup Point</label>
-              <select
-                name="pickupPoint"
-                value={formData.pickupPoint}
-                onChange={handleChange}
-                required
-                className="w-full border border-gray-200 p-3 rounded-lg bg-gray-50 focus:border-gray-400 outline-none shadow-sm transition-all"
-              >
-                <option value="">Select Pickup Point</option>
-                <option value="Guwahati">Guwahati</option>
-              </select>
+              {/* Pickup Point */}
+              <div>
+                <label className="block mb-2 font-medium">Pickup Point</label>
+                <select
+                  name="pickupPoint"
+                  value={formData.pickupPoint}
+                  onChange={handleChange}
+                  required
+                  className="w-full border border-gray-200 p-3 rounded-lg bg-gray-50 focus:border-gray-400 outline-none shadow-sm transition-all"
+                >
+                  <option value="">Select Pickup Point</option>
+                  <option value="Guwahati">Guwahati</option>
+                </select>
 
-              {totalPrice && (
-                <div className="mt-4 text-center animate-fadeIn">
-                  <p className="text-lg font-medium text-gray-600">
-                    Total Price:
-                  </p>
-                  <p className="text-3xl font-extrabold bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent drop-shadow-lg mt-1">
-                    {totalPrice}
-                  </p>
-                </div>
-              )}
-            </div>
+                {totalPrice && (
+                  <div className="mt-4 text-center animate-fadeIn">
+                    <p className="text-lg font-medium text-gray-600">
+                      Total Price:
+                    </p>
+                    <p className="text-3xl font-extrabold bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent drop-shadow-lg mt-1">
+                      {totalPrice}
+                    </p>
+                  </div>
+                )}
+              </div>
 
-            {/* Passengers */}
-            <div>
-              <label className="block mb-2 font-medium">
-                Number of Passengers
-              </label>
-              <input
-                type="number"
-                name="passengers"
-                placeholder="Enter number of passengers"
-                value={formData.passengers}
-                onChange={handleChange}
-                required
-                className="w-full border border-gray-200 p-3 rounded-lg bg-gray-50 focus:border-gray-400 outline-none shadow-sm transition-all [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
-              />
-            </div>
+              {/* Passengers */}
+              <div>
+                <label className="block mb-2 font-medium">
+                  Number of Passengers
+                </label>
+                <input
+                  type="number"
+                  name="passengers"
+                  placeholder="Enter number of passengers"
+                  value={formData.passengers}
+                  onChange={handleChange}
+                  required
+                  className="w-full border border-gray-200 p-3 rounded-lg bg-gray-50 focus:border-gray-400 outline-none shadow-sm transition-all [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+                />
+              </div>
 
-            {/* Additional Info */}
-            <div className="md:col-span-2">
-              <label className="block mb-2 font-medium">
-                Additional Information
-              </label>
-              <textarea
-                name="additionalInfo"
-                placeholder="Any special requests or notes?"
-                value={formData.additionalInfo}
-                onChange={handleChange}
-                className="w-full border border-gray-200 p-3 rounded-lg bg-gray-50 focus:border-gray-400 outline-none shadow-sm transition-all"
-              ></textarea>
-            </div>
+              {/* Additional Info */}
+              <div className="md:col-span-2">
+                <label className="block mb-2 font-medium">
+                  Additional Information
+                </label>
+                <textarea
+                  name="additionalInfo"
+                  placeholder="Any special requests or notes?"
+                  value={formData.additionalInfo}
+                  onChange={handleChange}
+                  className="w-full border border-gray-200 p-3 rounded-lg bg-gray-50 focus:border-gray-400 outline-none shadow-sm transition-all"
+                ></textarea>
+              </div>
 
-            {/* Submit */}
-            <div className="md:col-span-2 text-center mt-6">
-              <button
-                type="submit"
-                className="bg-black text-white px-10 py-3 rounded-lg font-medium hover:bg-gray-800 transition duration-300 shadow-md hover:shadow-lg"
-              >
-                Submit Booking
-              </button>
+              {/* Submit */}
+              <div className="md:col-span-2 text-center mt-6">
+                <button
+                  type="submit"
+                  className="bg-black text-white px-10 py-3 rounded-lg font-medium hover:bg-gray-800 transition duration-300 shadow-md hover:shadow-lg"
+                >
+                  Submit Booking
+                </button>
+              </div>
             </div>
-          </div>
           </Web3Form>
         </div>
       </section>
