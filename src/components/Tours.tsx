@@ -23,6 +23,7 @@ const tours = [
     groupSize: "Group Tour",
     price: "From ₹14,499 /- Per Person",
     link: "/tours/tawangGroup",
+    tag: "Best Seller"
   },
   {
     title: "Anini Tour",
@@ -67,7 +68,7 @@ const Tours = () => {
           {tours.map((tour) => (
             <div
               key={tour.title}
-              className="bg-card rounded-2xl overflow-hidden shadow-soft hover:shadow-hover transition-all duration-300 group cursor-pointer"
+              className="bg-card rounded-2xl overflow-hidden shadow-soft hover:shadow-hover transition-all duration-300 group cursor-pointer relative"
             >
               <div className="relative overflow-hidden aspect-[4/3]">
                 <img
@@ -98,6 +99,12 @@ const Tours = () => {
                   </Link>
                 </div>
               </div>
+
+              {tour?.tag && (
+                <div className="absolute top-0 right-0 px-4 pt-5 pb-3 bg-rose-500 text-neutral-50 rounded-bl-xl text-sm font-bold animate-bounce">
+                    {tour?.tag}
+                </div> 
+            )}
             </div>
           ))}
         </div>
