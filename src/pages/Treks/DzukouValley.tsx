@@ -2,7 +2,7 @@ import Footer from "@/components/Footer";
 import Navbar from "../../components/Navbar";
 import { useEffect, useState } from "react";
 import Web3Form from "@/components/Web3Form";
-import DzokuHero from "@/assets/Dzokuhero.jpg";
+import DzokuHero from "@/assets/DzokuHero.jpg";
 
 const DzukouValley = () => {
   useEffect(() => {
