@@ -133,6 +133,64 @@ const About = () => {
               </div>
             </div>
           </div>
+
+          {/* Reviews Section */}
+          <section id="reviews" className="py-24 bg-background">
+            <div className="container mx-auto px-6">
+              <div className="max-w-4xl mx-auto text-center mb-16">
+                <p className="text-sm text-muted-foreground uppercase tracking-wider mb-3">
+                  What People Say
+                </p>
+                <h2 className="text-4xl md:text-5xl font-bold mb-4">
+                  Traveler Reviews
+                </h2>
+                <p className="text-lg text-muted-foreground">
+                  Real stories from our travelers who explored Northeast India
+                  with us.
+                </p>
+              </div>
+
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {[
+                  {
+                    name: "Ananya Sharma",
+                    review:
+                      "The best travel experience of my life! Loved the local food, people, and the care they took in planning everything.",
+                  },
+                  {
+                    name: "Rohit Mehta",
+                    review:
+                      "Super smooth arrangements. Felt safe, welcomed, and connected throughout the trip. Highly recommended!",
+                  },
+                  {
+                    name: "Maria Fernandes",
+                    review:
+                      "Beautiful stays and even better hosts. Every moment felt authentic and unforgettable. Will travel again!",
+                  },
+                  {
+                    name: "Sanjay Das",
+                    review:
+                      "They really know Northeast India. The cultural experiences were beyond anything I expected!",
+                  },
+                  {
+                    name: "Priya Sen",
+                    review:
+                      "Loved how thoughtfully everything was curated. Nothing felt rushed. Truly soulful travel.",
+                  },
+                ].map((item, index) => (
+                  <div
+                    key={index}
+                    className="bg-muted/20 border shadow-sm rounded-xl p-6 hover:shadow-md transition-all"
+                  >
+                    <p className="text-muted-foreground mb-4">
+                      “{item.review}”
+                    </p>
+                    <h4 className="font-semibold text-lg">— {item.name}</h4>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
         </section>
       </main>
       <Footer />
