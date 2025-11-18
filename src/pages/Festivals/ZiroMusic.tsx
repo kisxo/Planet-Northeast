@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 import ZiroImg from "@/assets/ZiroHero.jpg";
 import ZiroCamp from "@/assets/ziroCampsite.jpg";
 import ZiroCamp2 from "@/assets/capmZiro2.jpg";
-import ZiroPackage from "@/assets/packages.jpg";
+import ZiroPackage from "@/assets/packages-temp.jpg";
 import ZiroCulture from "@/assets/thingsToDo.jpg";
 import Web3Form from "@/components/Web3Form";
 
