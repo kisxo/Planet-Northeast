@@ -7,7 +7,7 @@ import ZiroImg from "@/assets/ZiroHero.jpg";
 import ZiroCamp from "@/assets/ziroCampsite.jpg";
 import ZiroCamp2 from "@/assets/capmZiro2.jpg";
 import ZiroPackage from "@/assets/packages (1).jpg";
-import ZiroCulture from "@/assets/things to do (1).jpg";
+import ZiroCulture from "@/assets/thingsToDo.jpg";
 import Web3Form from "@/components/Web3Form";
 
 const ZiroMusic = () => {
