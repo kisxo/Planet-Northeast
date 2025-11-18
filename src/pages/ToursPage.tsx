@@ -6,11 +6,10 @@ import { Badge } from "@/components/ui/badge";
 import { Calendar, Users, MapPin } from "lucide-react";
 import tourTawang from "@/assets/tawang.png";
 import tourShillong from "@/assets/Shillong & Cherrapunji Escape.png";
-import tourZiro from "@/assets/Ziro Valley.png";
+import tourZiro from "@/assets/ZiroValley.png";
 import tourKaziranga from "@/assets/kaziranga.png";
 import tourMajuli from "@/assets/majuli.png";
 import tourDzukou from "@/assets/dvally.png";
-
 
 const tours = [
   {
@@ -22,7 +21,8 @@ const tours = [
     groupSize: "8-12",
     price: "₹22,499",
     category: "Adventure",
-    description: "Ride through high-altitude passes, monasteries, prayer flags and snow-laden landscapes."
+    description:
+      "Ride through high-altitude passes, monasteries, prayer flags and snow-laden landscapes.",
   },
   {
     id: 2,
@@ -33,7 +33,8 @@ const tours = [
     groupSize: "10-15",
     price: "₹12,999",
     category: "Relaxation",
-    description: "Waterfalls, clouds, cafés, living root bridges and peaceful hill vibes."
+    description:
+      "Waterfalls, clouds, cafés, living root bridges and peaceful hill vibes.",
   },
   {
     id: 3,
@@ -44,7 +45,8 @@ const tours = [
     groupSize: "6-10",
     price: "₹18,999",
     category: "Culture",
-    description: "Experience Apatani tribal heritage, pine forests, music, and slow-living beauty."
+    description:
+      "Experience Apatani tribal heritage, pine forests, music, and slow-living beauty.",
   },
   {
     id: 4,
@@ -55,7 +57,8 @@ const tours = [
     groupSize: "8-12",
     price: "₹9,499",
     category: "Wildlife",
-    description: "Spot the one-horned rhino, elephants and exotic birds in a UNESCO wildlife reserve."
+    description:
+      "Spot the one-horned rhino, elephants and exotic birds in a UNESCO wildlife reserve.",
   },
   {
     id: 5,
@@ -66,7 +69,8 @@ const tours = [
     groupSize: "12-16",
     price: "₹10,499",
     category: "History",
-    description: "Discover Satras, river island culture, traditional arts and serene landscapes."
+    description:
+      "Discover Satras, river island culture, traditional arts and serene landscapes.",
   },
   {
     id: 6,
@@ -77,8 +81,9 @@ const tours = [
     groupSize: "6-8",
     price: "₹14,999",
     category: "Nature",
-    description: "Trek across grass-covered valleys, floating clouds and breathtaking ridgelines."
-  }
+    description:
+      "Trek across grass-covered valleys, floating clouds and breathtaking ridgelines.",
+  },
 ];
 
 const ToursPage = () => {
@@ -92,8 +97,9 @@ const ToursPage = () => {
             <div className="max-w-4xl mx-auto text-center">
               <h1 className="text-4xl md:text-6xl font-bold mb-6">Our Tours</h1>
               <p className="text-xl text-muted-foreground">
-                Carefully curated experiences designed to create unforgettable memories. 
-                Each tour is led by expert guides who know these destinations inside out.
+                Carefully curated experiences designed to create unforgettable
+                memories. Each tour is led by expert guides who know these
+                destinations inside out.
               </p>
             </div>
           </div>
@@ -104,10 +110,13 @@ const ToursPage = () => {
           <div className="container mx-auto px-6">
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {tours.map((tour) => (
-                <Card key={tour.id} className="group overflow-hidden flex flex-col">
+                <Card
+                  key={tour.id}
+                  className="group overflow-hidden flex flex-col"
+                >
                   <div className="relative h-64 overflow-hidden">
-                    <img 
-                      src={tour.image} 
+                    <img
+                      src={tour.image}
                       alt={tour.name}
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                     />
@@ -117,8 +126,10 @@ const ToursPage = () => {
                   </div>
                   <div className="p-6 flex flex-col flex-grow">
                     <h3 className="text-2xl font-bold mb-2">{tour.name}</h3>
-                    <p className="text-muted-foreground mb-4 flex-grow">{tour.description}</p>
-                    
+                    <p className="text-muted-foreground mb-4 flex-grow">
+                      {tour.description}
+                    </p>
+
                     <div className="space-y-2 mb-4">
                       <div className="flex items-center gap-2 text-sm text-muted-foreground">
                         <MapPin className="h-4 w-4" />
@@ -133,9 +144,11 @@ const ToursPage = () => {
                         <span>{tour.groupSize} people</span>
                       </div>
                     </div>
-                    
+
                     <div className="flex items-center justify-between pt-4 border-t">
-                      <span className="text-2xl font-bold text-primary">{tour.price}</span>
+                      <span className="text-2xl font-bold text-primary">
+                        {tour.price}
+                      </span>
                       <Button>Book Now</Button>
                     </div>
                   </div>
