@@ -3,6 +3,7 @@ import { Camera, MapPin } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
 import Np from "@/assets/nagalandphotography.jpg";
 import apatani from "@/assets/apatani.jpg";
+
 const photoTours = [
   {
     title: "Apatani Tribe Photography Tour – Arunachal Pradesh",
@@ -13,7 +14,7 @@ const photoTours = [
     link: "/photography-tours/apatani-tribe",
   },
   {
-    title: "Headhunters Photography Tour- ft. Aoleang Festival, Nagaland",
+    title: "Headhunters Photography Tour- ft. Aoleang Festival, Nagaland",
     image: Np,
     duration: "April 1st to 6th, Every year",
     groupSize: "Small Group / Custom Tour",
@@ -23,7 +24,6 @@ const photoTours = [
 ];
 
 const PhotoTours = () => {
-
   const navigate = useNavigate();
   return (
     <section id="phototours" className="py-16 bg-muted/30">
@@ -46,8 +46,9 @@ const PhotoTours = () => {
               key={tour.title}
               className="bg-card rounded-2xl overflow-hidden shadow-soft hover:shadow-hover transition-all duration-300 group cursor-pointer"
             >
+              {/* IMAGE (unclickable, hover zoom) */}
               <div className="relative overflow-hidden aspect-[4/3]">
-                <img onClick={()=>{navigate(tour.link);}}
+                <img
                   src={tour.image}
                   alt={tour.title}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
@@ -55,7 +56,14 @@ const PhotoTours = () => {
               </div>
 
               <div className="p-6">
-                <h3 className="text-xl font-semibold mb-4">{tour.title}</h3>
+                {/* TITLE CLICKABLE */}
+                <h3
+                  onClick={() => navigate(tour.link)}
+                  className="text-xl font-semibold mb-4 cursor-pointer"
+                >
+                  {tour.title}
+                </h3>
+
                 <div className="flex items-center gap-4 text-sm text-muted-foreground mb-4">
                   <div className="flex items-center gap-2">
                     <Camera className="h-4 w-4" />

@@ -3,6 +3,7 @@ import { Clock, Users } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
 import Dzokou from "@/assets/Dzukou.jpg";
 import glow from "@/assets/glowlake.jpg";
+
 const treks = [
   {
     title: "Dzukou Valley Trek",
@@ -45,9 +46,6 @@ const Treks = () => {
             >
               <div className="relative overflow-hidden aspect-[4/3]">
                 <img
-                  onClick={() => {
-                    navigate(trek.link);
-                  }}
                   src={trek.image}
                   alt={trek.title}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
@@ -55,7 +53,14 @@ const Treks = () => {
               </div>
 
               <div className="p-6">
-                <h3 className="text-xl font-semibold mb-4">{trek.title}</h3>
+                {/* UPDATED TITLE (clickable, no underline) */}
+                <h3
+                  onClick={() => navigate(trek.link)}
+                  className="text-xl font-semibold mb-4 cursor-pointer"
+                >
+                  {trek.title}
+                </h3>
+
                 <div className="flex items-center gap-4 text-sm text-muted-foreground mb-4">
                   <div className="flex items-center gap-2">
                     <Clock className="h-4 w-4" />

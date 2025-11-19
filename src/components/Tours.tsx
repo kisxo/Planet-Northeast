@@ -10,7 +10,7 @@ import { Link, useNavigate } from "react-router-dom";
 const tours = [
   {
     title: "Tawang Tour",
-    image: tawangRoad, // Replace with your image import
+    image: tawangRoad,
     duration: "5 Days | 4 Nights",
     groupSize: "Private Tour",
     price: "From ₹18,499 /- Per Person",
@@ -18,16 +18,16 @@ const tours = [
   },
   {
     title: "Hidden Himalayas: The Offbeat Tawang Trails- Group Tour",
-    image: tawangGroup, // Replace with your image import
+    image: tawangGroup,
     duration: "6 Days | 5 Nights",
     groupSize: "Group Tour",
     price: "From ₹14,499 /- Per Person",
     link: "/tours/tawangGroup",
-    tag: "Best Seller"
+    tag: "Best Seller",
   },
   {
     title: "Anini Tour",
-    image: Anini, // Replace with your image import
+    image: Anini,
     duration: "6 Days | 5 Nights",
     groupSize: "Private / Group Tour",
     price: "From ₹16,499 /- Per Person",
@@ -35,7 +35,7 @@ const tours = [
   },
   {
     title: "Mechuka Tour",
-    image: Machuka, // Replace with your image import
+    image: Machuka,
     duration: "6 Days | 5 Nights",
     groupSize: "Private / Group Tour",
     price: "From ₹16,499 /- Per Person",
@@ -43,7 +43,7 @@ const tours = [
   },
   {
     title: "Meghalaya Tour",
-    image: Meghalaya, // Replace with your image import
+    image: Meghalaya,
     duration: "5 Days | 4 Nights",
     groupSize: "Private / Group Tour",
     price: "From ₹12,499/- Per Person",
@@ -72,16 +72,21 @@ const Tours = () => {
             >
               <div className="relative overflow-hidden aspect-[4/3]">
                 <img
-                  onClick={() => {
-                    navigate(tour.link);
-                  }}
                   src={tour.image}
                   alt={tour.title}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
               </div>
+
               <div className="p-6">
-                <h3 className="text-xl font-semibold mb-4">{tour.title}</h3>
+                {/* UPDATED TITLE — underline removed, still clickable */}
+                <h3
+                  onClick={() => navigate(tour.link)}
+                  className="text-xl font-semibold mb-4 cursor-pointer"
+                >
+                  {tour.title}
+                </h3>
+
                 <div className="flex items-center gap-4 text-sm text-muted-foreground mb-4">
                   <div className="flex items-center gap-2">
                     <Clock className="h-4 w-4" />
@@ -92,6 +97,7 @@ const Tours = () => {
                     <span>{tour.groupSize}</span>
                   </div>
                 </div>
+
                 <div className="flex items-center justify-between">
                   <span className="text-lg font-semibold">{tour.price}</span>
                   <Link to={tour.link} className="border rounded-sm p-2">
@@ -102,9 +108,9 @@ const Tours = () => {
 
               {tour?.tag && (
                 <div className="absolute top-0 right-0 px-4 pt-5 pb-3 bg-rose-500 text-neutral-50 rounded-bl-xl text-sm font-bold animate-bounce">
-                    {tour?.tag}
-                </div> 
-            )}
+                  {tour?.tag}
+                </div>
+              )}
             </div>
           ))}
         </div>

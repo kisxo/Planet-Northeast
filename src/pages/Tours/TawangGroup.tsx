@@ -56,27 +56,31 @@ export default function TawangGroup() {
       <Navbar />
 
       {/* ---------- HERO SECTION ---------- */}
-      <section className="relative h-[75vh] w-full overflow-hidden">
+      <section className="relative w-full h-[70vh] md:h-[75vh] overflow-hidden">
         <img
           src={TawangBG}
           alt="Tawang Tour"
-          className="w-full h-full object-cover"
+          className="absolute inset-0 w-full h-full object-cover object-center"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/50 to-black/70 flex items-center justify-center text-center px-6">
-          <div className="text-white max-w-3xl">
-            <h1 className="text-5xl md:text-5xl font-semibold mb-4 tracking-wide">
+
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/40 to-black/80 flex items-center justify-center px-4 sm:px-6 text-center">
+          <div className="text-white max-w-3xl mx-auto">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold mb-4 leading-tight tracking-wide">
               JOIN THIS EXCITING GROUP TOUR AND EXPLORE THE MAJESTIC EASTERN
               HIMALAYAS
             </h1>
-            <p className="text-lg md:text-2xl text-gray-200 leading-relaxed">
+
+            <p className="text-base sm:text-lg md:text-2xl text-gray-200 leading-relaxed">
               From Guwahati — 6 Days / 5 Nights <br />
               <span className="text-yellow-400 font-semibold">
                 Price Starting from ₹14,499 /- Per Person
               </span>
             </p>
+
             <a
               href="#booking"
-              className="inline-block mt-8 bg-white text-black font-medium px-8 py-3 rounded-lg shadow-lg hover:bg-gray-100 transition duration-300"
+              className="inline-block mt-6 sm:mt-8 bg-white text-black font-medium px-6 sm:px-8 py-3 rounded-lg shadow-lg hover:bg-gray-100 transition duration-300"
             >
               Book Now
             </a>
