@@ -445,14 +445,16 @@ const ApataniTour = () => {
       </section>
 
       {/* ⭐ BOOKING FORM */}
+      {/* ⭐ BOOKING FORM */}
       <section id="booking" className="max-w-5xl mx-auto px-6 py-16">
         <div className="bg-white border border-gray-200 rounded-2xl shadow-xl p-10">
           <h2 className="text-4xl font-bold text-center mb-10 text-gray-900">
             Book Your Apatani Tribe Experience
           </h2>
 
+          {/* ⭐ FIXED: Removed nested form — now structure matches Nagaland */}
           <Web3Form title="Photography Tour" name="Apatani Tribe">
-            <form onSubmit={handleSubmit} className="grid md:grid-cols-2 gap-8">
+            <div className="grid md:grid-cols-2 gap-8">
               {/* Full Name */}
               <div>
                 <label className="block mb-2 font-medium">Full Name</label>
@@ -516,7 +518,7 @@ const ApataniTour = () => {
                   className="w-full p-3 border border-gray-300 rounded-lg bg-gray-50"
                 >
                   <option value="">Select Pickup Point</option>
-                  <option value="Itanagar">Itanagar – ₹24999</option>
+                  <option value="Itanagar">Itanagar – ₹24,999</option>
                 </select>
 
                 {totalPrice && (
@@ -552,7 +554,6 @@ const ApataniTour = () => {
                 </label>
                 <textarea
                   name="additionalInfo"
-                  // rows="4"
                   value={formData.additionalInfo}
                   onChange={handleChange}
                   className="w-full p-3 border border-gray-300 rounded-lg bg-gray-50 resize-none"
@@ -568,7 +569,7 @@ const ApataniTour = () => {
                   Submit Booking
                 </button>
               </div>
-            </form>
+            </div>
           </Web3Form>
         </div>
       </section>
