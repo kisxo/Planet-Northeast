@@ -94,25 +94,25 @@ const Footer = () => {
             <h4 className="font-semibold mb-4">Follow Us</h4>
             <div className="flex gap-4">
               <a
-                href="#"
+                href="https://www.facebook.com/share/1EZqNZk9cV/"
                 className="text-background/80 hover:text-background transition-colors"
               >
                 <Facebook className="h-5 w-5" />
               </a>
               <a
-                href="https://www.instagram.com/nomadsonwheels_now/"
+                href="https://www.instagram.com/planet_northeast?igsh=MW52eWRweGNjaHI5OQ==Instagram"
                 className="text-background/80 hover:text-background transition-colors"
               >
                 <Instagram className="h-5 w-5" />
               </a>
               <a
-                href="#"
+                href="https://x.com/PlntNortheast?t=2s_icDDLdNbtLcaVBpaOBg&s=09"
                 className="text-background/80 hover:text-background transition-colors"
               >
                 <Twitter className="h-5 w-5" />
               </a>
               <a
-                href="#"
+                href="planetne.official@gmail.com"
                 className="text-background/80 hover:text-background transition-colors"
               >
                 <Mail className="h-5 w-5" />
